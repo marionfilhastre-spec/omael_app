@@ -14,3 +14,9 @@
   for = "/assets/*"
   [headers.values]
     Cache-Control = "public, max-age=3600"
+
+# Ancienne page « Ma mission » (remplacée par une page commune à tous les enseignants)
+[[redirects]]
+  from = "/mission.html"
+  to = "/convocation.html"
+  status = 301

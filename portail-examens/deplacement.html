@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Mon déplacement – Examens ZESE</title>
-  <meta name="description" content="Procédure de déplacement, hébergement et conseils pratiques pour votre mission d’examen.">
+  <title>Oraux avec déplacement – Examens ZESE</title>
+  <meta name="description" content="Grand oral et oral de français dans un autre établissement de la zone : organisation du trajet, hébergement, repas, textes et bordereaux.">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,9 +19,9 @@
     <section class="hero">
       <div class="container">
         <div>
-          <nav class="breadcrumb" aria-label="Fil d’Ariane"><ol><li><a href="index.html">Accueil</a></li><li aria-current="page">Mon déplacement</li></ol></nav>
-          <h1>Mon déplacement</h1>
-          <p class="hero-text">Comment se déroule l’organisation de votre trajet et de votre hébergement, et ce qu’il faut faire — ou ne pas faire — avant le départ.</p>
+          <nav class="breadcrumb" aria-label="Fil d’Ariane"><ol><li><a href="index.html">Accueil</a></li><li aria-current="page">Oraux avec déplacement</li></ol></nav>
+          <h1>Oraux avec déplacement</h1>
+          <p class="hero-text">Vous êtes convoqué(e) au Grand oral ou à l’oral de français dans un autre établissement de la zone&nbsp;? Voici comment tout s’organise, du premier contact jusqu’au retour.</p>
         </div>
         <div class="hero-art">
           <p class="hero-note">On organise,<br>vous voyagez<br>sereinement&nbsp;!</p>
@@ -30,82 +30,89 @@
     </section>
 
     <div class="container">
-      <section class="alert-banner feature-cards" style="margin-top:-24px" aria-labelledby="alerte-titre">
-        <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#alert"></use></svg>
+      <section class="alert-banner feature-cards" aria-labelledby="alerte-titre">
+        <i data-icon="alert"></i>
         <div>
           <h2 id="alerte-titre">Ne réservez rien vous-même</h2>
           <p class="strong">Ni billet d’avion, ni billet de train, ni hôtel.</p>
-          <p>L’organisation et la réservation sont effectuées par l’établissement d’accueil ou la coordination, selon les modalités communiquées pour la session.</p>
-          <p class="warn">Une dépense engagée sans accord préalable pourrait ne pas être remboursée.</p>
+          <p>L’établissement qui vous accueille organise et paie votre transport et vos nuitées. Vous n’avez rien à avancer.</p>
+          <p class="warn">Attendez sa proposition avant toute démarche.</p>
         </div>
       </section>
 
-      <section class="section card" aria-labelledby="proc-titre">
-        <h2 class="card-title" id="proc-titre"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#plane"></use></svg>La procédure de déplacement, étape par étape</h2>
-        <ol class="steps" style="list-style:none;padding:0;margin:0">
-          <li class="step"><span class="num bg-purple">1</span><div class="body tint-purple"><svg class="icon c-purple" aria-hidden="true"><use href="assets/icons.svg#file"></use></svg><h3>Je reçois ma convocation</h3><p>Elle précise l’établissement, les dates et l’examen concerné.</p></div></li>
-          <li class="step"><span class="num bg-blue">2</span><div class="body tint-blue"><svg class="icon c-blue" aria-hidden="true"><use href="assets/icons.svg#mail"></use></svg><h3>L’établissement me contacte</h3><p>Il recueille mes contraintes (ville de départ, horaires, pièce d’identité).</p></div></li>
-          <li class="step"><span class="num bg-orange">3</span><div class="body tint-orange"><svg class="icon c-orange" aria-hidden="true"><use href="assets/icons.svg#ticket"></use></svg><h3>Je reçois mes réservations</h3><p>Billets et confirmation d’hébergement me sont transmis par mail.</p></div></li>
-          <li class="step"><span class="num bg-green">4</span><div class="body tint-green"><svg class="icon c-green" aria-hidden="true"><use href="assets/icons.svg#check"></use></svg><h3>Je vérifie et je confirme</h3><p>Noms, dates, horaires : je signale toute erreur immédiatement.</p></div></li>
-          <li class="step"><span class="num bg-blue">5</span><div class="body tint-blue"><svg class="icon c-blue" aria-hidden="true"><use href="assets/icons.svg#pin"></use></svg><h3>Je voyage</h3><p>Je conserve billets, cartes d’embarquement et factures.</p></div></li>
+      <section class="section card" aria-labelledby="etapes-titre">
+        <h2 class="card-title" id="etapes-titre"><i data-icon="plane"></i>Comment ça se passe, étape par étape</h2>
+        <ol class="steps six" style="list-style:none;padding:0;margin:0">
+          <li class="step"><span class="num bg-purple">1</span><div class="body tint-purple"><i data-icon="mail" class="c-purple"></i><h3>Convocation</h3><p>Vous la recevez par mail professionnel.</p></div></li>
+          <li class="step"><span class="num bg-blue">2</span><div class="body tint-blue"><i data-icon="phone" class="c-blue"></i><h3>Premier contact</h3><p>L’établissement d’accueil vous contacte.</p></div></li>
+          <li class="step"><span class="num bg-orange">3</span><div class="body tint-orange"><i data-icon="ticket" class="c-orange"></i><h3>Proposition de trajet</h3><p>Il vous propose un vol ou un train.</p></div></li>
+          <li class="step"><span class="num bg-green">4</span><div class="body tint-green"><i data-icon="check" class="c-green"></i><h3>Accord commun</h3><p>Vous validez ensemble horaires et itinéraire.</p></div></li>
+          <li class="step"><span class="num bg-blue">5</span><div class="body tint-blue"><i data-icon="bed" class="c-blue"></i><h3>Réservations</h3><p>Billets et hôtel réservés et payés par l’établissement.</p></div></li>
+          <li class="step"><span class="num bg-purple">6</span><div class="body tint-purple"><i data-icon="mic" class="c-purple"></i><h3>Sur place</h3><p>Épreuves, puis signature de l’état de frais.</p></div></li>
         </ol>
       </section>
 
       <div class="section grid grid-3">
-        <section class="card tint-blue res-card" id="transport">
-          <h2 class="card-title"><span class="icon-bubble sm blue"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#train"></use></svg></span>Transport</h2>
-          <p>Le trajet (avion, train ou autre) est choisi et réservé par l’établissement d’accueil en tenant compte de vos contraintes et des règles de la session. Les transferts sur place (aéroport, gare) vous sont précisés avec vos réservations.</p>
+        <section class="card tint-blue res-card">
+          <h2 class="card-title"><span class="icon-bubble sm blue"><i data-icon="train"></i></span>Transport</h2>
+          <p>L’établissement d’accueil vous fait une <b>proposition de vol ou de train</b>. Vous vous mettez d’accord avec lui sur les horaires&nbsp;; il réserve et paie les billets.</p>
         </section>
-        <section class="card tint-purple res-card" id="hebergement">
-          <h2 class="card-title" style="color:var(--purple)"><span class="icon-bubble sm purple"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#bed"></use></svg></span>Hébergement</h2>
-          <p>Lorsque la mission le nécessite, l’hébergement est réservé par l’établissement ou la coordination, à proximité du lieu d’examen. Vous recevez l’adresse et la confirmation avant le départ.</p>
+        <section class="card tint-purple res-card">
+          <h2 class="card-title" style="color:var(--purple)"><span class="icon-bubble sm purple"><i data-icon="bed"></i></span>Nuitées</h2>
+          <p>L’hôtel est <b>réservé et payé par l’établissement d’accueil</b>. Vous ne réservez pas et ne payez pas vos nuitées.</p>
         </section>
         <section class="card tint-green res-card">
-          <h2 class="card-title" style="color:var(--green)"><span class="icon-bubble sm green"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#utensils"></use></svg></span>Repas sur place</h2>
-          <p>Les repas sont organisés par l’établissement ou indemnisés selon les conditions de la session. Le détail figure dans la page <a href="indemnites.html">Mes indemnités</a>.</p>
+          <h2 class="card-title" style="color:var(--green)"><span class="icon-bubble sm green"><i data-icon="utensils"></i></span>Repas</h2>
+          <p>Vos repas sont pris en charge par des <b>per diem</b>, qui vous sont versés. <a href="indemnites.html#per-diem">En savoir plus</a></p>
         </section>
       </div>
 
       <div class="section grid grid-2">
-        <section class="card" aria-labelledby="avant-titre">
-          <h2 class="card-title" id="avant-titre"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#square-check"></use></svg>Avant de partir, je vérifie</h2>
+        <section class="card" id="grand-oral">
+          <h2 class="card-title purple"><i data-icon="mic"></i>Grand oral</h2>
           <ul class="check-list">
-            <li><svg class="icon sq" aria-hidden="true"><use href="assets/icons.svg#square-check"></use></svg>Ma pièce d’identité ou mon passeport est valide pour le pays de destination</li>
-            <li><svg class="icon sq" aria-hidden="true"><use href="assets/icons.svg#square-check"></use></svg>J’ai ma convocation (format papier ou numérique)</li>
-            <li><svg class="icon sq" aria-hidden="true"><use href="assets/icons.svg#square-check"></use></svg>J’ai mes billets et la confirmation d’hébergement</li>
-            <li><svg class="icon sq" aria-hidden="true"><use href="assets/icons.svg#square-check"></use></svg>J’ai noté le contact de l’établissement d’accueil</li>
-            <li><svg class="icon sq" aria-hidden="true"><use href="assets/icons.svg#square-check"></use></svg>J’ai vérifié ma couverture santé pour le séjour</li>
-            <li><svg class="icon sq" aria-hidden="true"><use href="assets/icons.svg#square-check"></use></svg>J’ai pris connaissance des documents de ma mission (<a href="ressources.html">Mes ressources</a>)</li>
+            <li><i data-icon="square-check" class="sq"></i><span>L’établissement centre d’examen vous communique l’organisation&nbsp;: horaires, commissions, salles.</span></li>
+            <li><i data-icon="square-check" class="sq"></i><span>Les grilles d’évaluation et documents de l’épreuve vous sont remis par l’établissement.</span></li>
+            <li><i data-icon="square-check" class="sq"></i><span>Avant de repartir, faites <b>signer votre état de frais</b> par le chef d’établissement. <a href="indemnites.html#etat-de-frais">Voir la démarche</a></span></li>
           </ul>
         </section>
-        <section class="card" aria-labelledby="imprevu-titre">
-          <h2 class="card-title orange" id="imprevu-titre"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#alert"></use></svg>En cas d’imprévu</h2>
-          <div class="info-tiles">
-            <div class="info-tile orange tint-orange"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#clock"></use></svg><div><strong>Retard ou annulation de vol / train</strong><p>Prévenez immédiatement l’établissement d’accueil et conservez tous les justificatifs remis par le transporteur.</p></div></div>
-            <div class="info-tile red tint-red"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#ban"></use></svg><div><strong>Empêchement avant le départ</strong><p>Informez sans délai la coordination et l’établissement afin qu’un remplacement puisse être organisé.</p></div></div>
-            <div class="info-tile blue tint-blue"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#phone"></use></svg><div><strong>Problème sur place</strong><p>Contactez l’établissement d’accueil (coordonnées dans <a href="mission.html">Ma mission</a>) puis la coordination.</p></div></div>
-          </div>
+        <section class="card" id="francais">
+          <h2 class="card-title"><i data-icon="book"></i>Oral de français</h2>
+          <ul class="check-list">
+            <li><i data-icon="square-check" class="sq"></i><span>Les <b>textes</b> sur lesquels vous interrogez les candidats vous sont <b>transmis par l’établissement</b> centre d’examen.</span></li>
+            <li><i data-icon="square-check" class="sq"></i><span>Ils sont en général envoyés <b>en amont</b> de l’épreuve, pour vous laisser le temps de les préparer.</span></li>
+            <li><i data-icon="square-check" class="sq"></i><span>Vous n’avez rien reçu quelques jours avant&nbsp;? Contactez l’établissement d’accueil.</span></li>
+          </ul>
         </section>
       </div>
 
       <div class="section grid grid-2">
-        <section class="card">
-          <h2 class="card-title"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#help"></use></svg>Une question&nbsp;?</h2>
-          <p class="small">La coordination des examens est à votre disposition pour répondre à vos questions.</p>
-          <a class="contact-mail" href="mailto:examens.zese@lycee-chateaubriand.eu"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#mail"></use></svg>examens.zese@lycee-chateaubriand.eu</a>
-          <div class="hint"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#clock"></use></svg><p>Pensez à indiquer&nbsp;: votre nom, votre discipline, l’établissement concerné et les dates de votre mission.</p></div>
+        <section class="card" id="bordereaux">
+          <h2 class="card-title green"><i data-icon="square-check"></i>Bordereaux de notation</h2>
+          <p>Les bordereaux de notation vous sont <b>transmis par l’établissement centre d’examen</b>, sur place ou avant l’épreuve. Vous les complétez et les rendez à l’établissement selon ses consignes, à l’issue des épreuves.</p>
+          <p class="small muted mt-8">En cas de doute sur un bordereau, adressez-vous au responsable du centre d’examen.</p>
         </section>
         <section class="card">
-          <h2 class="card-title"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#help"></use></svg>Questions fréquentes</h2>
-          <ul class="faq-list">
-            <li><a href="faq.html#q-billet">Puis-je réserver moi-même mon billet d’avion&nbsp;?<svg class="icon" aria-hidden="true"><use href="assets/icons.svg#chevron-right"></use></svg></a></li>
-            <li><a href="faq.html#q-organisation">Qui organise mon déplacement&nbsp;?<svg class="icon" aria-hidden="true"><use href="assets/icons.svg#chevron-right"></use></svg></a></li>
-            <li><a href="faq.html#q-hotel">Qui paie mon hôtel&nbsp;?<svg class="icon" aria-hidden="true"><use href="assets/icons.svg#chevron-right"></use></svg></a></li>
-            <li><a href="faq.html#q-itineraire">Puis-je modifier mon itinéraire&nbsp;?<svg class="icon" aria-hidden="true"><use href="assets/icons.svg#chevron-right"></use></svg></a></li>
+          <h2 class="card-title"><i data-icon="square-check"></i>Avant de partir, je vérifie</h2>
+          <ul class="check-list small">
+            <li><i data-icon="square-check" class="sq"></i><span>Pièce d’identité ou passeport valide pour le pays de destination</span></li>
+            <li><i data-icon="square-check" class="sq"></i><span>Convocation (papier ou numérique)</span></li>
+            <li><i data-icon="square-check" class="sq"></i><span>Billets et adresse de l’hôtel</span></li>
+            <li><i data-icon="square-check" class="sq"></i><span>Contact de l’établissement d’accueil</span></li>
+            <li><i data-icon="square-check" class="sq"></i><span><b>État de frais</b> pré-rempli, à faire signer sur place</span></li>
+            <li><i data-icon="square-check" class="sq"></i><span>Textes de l’oral de français (si concerné)</span></li>
           </ul>
-          <a class="btn btn-outline btn-block mt-16" href="faq.html">Voir toutes les questions <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#arrow-right"></use></svg></a>
         </section>
       </div>
+
+      <section class="section card tint-orange">
+        <h2 class="card-title orange"><i data-icon="clock"></i>En cas d’imprévu</h2>
+        <div class="grid grid-3">
+          <p><b>Retard ou annulation de vol / train</b><br>Prévenez tout de suite l’établissement d’accueil et gardez les justificatifs du transporteur.</p>
+          <p><b>Empêchement avant le départ</b><br>Suivez la <a href="convocation.html#absence">procédure d’absence</a> et prévenez l’établissement d’accueil.</p>
+          <p><b>Problème sur place</b><br>Adressez-vous au chef de centre de l’établissement d’accueil, puis à la coordination.</p>
+        </div>
+      </section>
     </div>
   </main>
 

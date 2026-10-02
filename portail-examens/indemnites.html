@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Mes indemnités – Examens ZESE</title>
-  <meta name="description" content="Indemnités de jury, repas, hébergement, transport et modalités de remboursement.">
+  <title>Frais et indemnités – Examens ZESE</title>
+  <meta name="description" content="Per diem, nuitées, état de frais à faire signer par le chef de l’établissement d’accueil et paiement des indemnités de jury d’examen.">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,146 +19,98 @@
     <section class="hero">
       <div class="container">
         <div>
-          <nav class="breadcrumb" aria-label="Fil d’Ariane"><ol><li><a href="index.html">Accueil</a></li><li aria-current="page">Mes indemnités</li></ol></nav>
-          <h1>Mes indemnités</h1>
-          <p class="hero-text">Toutes les informations sur les indemnités de jury, les repas, l’hébergement et les modalités de remboursement.</p>
+          <nav class="breadcrumb" aria-label="Fil d’Ariane"><ol><li><a href="index.html">Accueil</a></li><li aria-current="page">Frais et indemnités</li></ol></nav>
+          <h1>Frais et indemnités</h1>
+          <p class="hero-text">Ce qui est pris en charge lors de vos déplacements, et comment obtenir le paiement de vos indemnités de jury d’examen.</p>
         </div>
         <div class="hero-art">
-          <p class="hero-note">Une prise en charge<br>selon les modalités<br>définies&nbsp;!</p>
+          <p class="hero-note">Un état de frais signé,<br>des indemnités<br>bien versées&nbsp;!</p>
         </div>
       </div>
     </section>
 
     <div class="container">
-      <section class="info-banner feature-cards" style="margin-top:-24px">
-        <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#info"></use></svg>
+      <section class="info-banner feature-cards">
+        <i data-icon="info"></i>
         <div>
-          <h2>Information importante</h2>
-          <p>Les indemnités et frais pris en charge sont définis selon les modalités en vigueur pour la session en cours. Avant d’engager une dépense, consultez la procédure et, en cas de doute, rapprochez-vous de l’établissement d’accueil.</p>
+          <h2>Deux choses distinctes</h2>
+          <p><b>Les frais de mission</b> (transport, nuitées, repas) sont pris en charge par l’établissement qui vous accueille. <b>Les indemnités de jury d’examen</b> rémunèrent votre participation aux épreuves&nbsp;: elles sont payées sur la base de votre <b>état de frais</b>.</p>
         </div>
       </section>
 
-      <div class="section grid grid-4">
-        <section class="card tint-blue res-card" id="transport">
-          <h2 class="card-title"><span class="icon-bubble sm blue"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#plane"></use></svg></span>Transport</h2>
-          <p>Le transport est organisé par l’établissement d’accueil selon les modalités définies. Dans certains cas, un remboursement peut être prévu.</p>
-          <a class="link-arrow" href="deplacement.html">Voir les modalités <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#arrow-right"></use></svg></a>
+      <div class="section grid grid-4" id="per-diem">
+        <section class="card tint-blue res-card">
+          <h2 class="card-title"><span class="icon-bubble sm blue"><i data-icon="plane"></i></span>Transport</h2>
+          <p>Proposé, réservé et payé par l’établissement d’accueil, après accord avec vous.</p>
         </section>
         <section class="card tint-purple res-card">
-          <h2 class="card-title purple" style="color:var(--purple)"><span class="icon-bubble sm purple"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#bed"></use></svg></span>Hébergement</h2>
-          <p>La prise en charge de l’hébergement est assurée selon les règles en vigueur. Les réservations sont effectuées par l’établissement (ou la coordination) dans la plupart des situations.</p>
-          <a class="link-arrow purple" href="deplacement.html#hebergement">Voir les modalités <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#arrow-right"></use></svg></a>
+          <h2 class="card-title" style="color:var(--purple)"><span class="icon-bubble sm purple"><i data-icon="bed"></i></span>Nuitées</h2>
+          <p>Réservées et payées par l’établissement d’accueil. Vous ne réservez pas et n’avancez rien.</p>
         </section>
         <section class="card tint-green res-card">
-          <h2 class="card-title green" style="color:var(--green)"><span class="icon-bubble sm green"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#utensils"></use></svg></span>Repas / per diem</h2>
-          <p>Des indemnités de repas peuvent être versées selon les conditions définies pour la session en cours.</p>
-          <a class="link-arrow green" href="#montants">Voir les modalités <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#arrow-right"></use></svg></a>
+          <h2 class="card-title" style="color:var(--green)"><span class="icon-bubble sm green"><i data-icon="utensils"></i></span>Repas (per diem)</h2>
+          <p>Vos repas sont pris en charge par des per diem, versés selon les modalités de la session.</p>
         </section>
         <section class="card tint-orange res-card">
-          <h2 class="card-title orange" style="color:var(--orange)"><span class="icon-bubble sm orange"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#coins"></use></svg></span>Indemnité de jury</h2>
-          <p>Une indemnité est prévue pour les membres de jury. Le montant et les conditions de versement sont définis par la DEC.</p>
-          <a class="link-arrow orange" href="#montants">Voir les modalités <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#arrow-right"></use></svg></a>
+          <h2 class="card-title" style="color:var(--orange)"><span class="icon-bubble sm orange"><i data-icon="coins"></i></span>Indemnités de jury</h2>
+          <p>Versées pour votre participation aux épreuves, sur présentation de l’état de frais signé.</p>
         </section>
       </div>
 
+      <section class="section card" id="etat-de-frais" aria-labelledby="edf-titre">
+        <h2 class="card-title orange" id="edf-titre"><i data-icon="file"></i>L’état de frais&nbsp;: la démarche pour être payé(e)</h2>
+        <ol class="steps" style="list-style:none;padding:0;margin:0;grid-template-columns:repeat(4,minmax(0,1fr))">
+          <li class="step"><span class="num bg-blue">1</span><div class="body tint-blue"><i data-icon="pen" class="c-blue"></i><h3>Je complète l’état de frais</h3><p>Idéalement avant de partir&nbsp;: identité, épreuve, dates.</p></div></li>
+          <li class="step"><span class="num bg-red">2</span><div class="body tint-red"><i data-icon="landmark" class="c-red"></i><h3>Je le fais signer sur place</h3><p>Par le <b>chef de l’établissement d’accueil</b>, avant mon départ.</p></div></li>
+          <li class="step"><span class="num bg-purple">3</span><div class="body tint-purple"><i data-icon="file" class="c-purple"></i><h3>L’original reste sur place</h3><p>Dans l’établissement d’accueil. Je garde une copie.</p></div></li>
+          <li class="step"><span class="num bg-green">4</span><div class="body tint-green"><i data-icon="mail" class="c-green"></i><h3>J’envoie un exemplaire</h3><p>À mon <b>établissement d’origine</b>, qui le met en paiement.</p></div></li>
+        </ol>
+
+        <div class="key-point mt-24">
+          <i data-icon="alert"></i>
+          <p><b>Très important&nbsp;:</b> sans la signature du chef de l’établissement qui vous a accueilli(e), votre état de frais ne peut pas être mis en paiement. Faites-le signer <b>avant de repartir</b>.</p>
+        </div>
+
+        <h3 class="sub-title mt-24">Où va chaque exemplaire&nbsp;?</h3>
+        <div class="copies">
+          <div class="copy tint-purple"><span class="copy-tag">Original signé</span><strong>Établissement d’accueil</strong><p>Conservé par l’établissement où vous avez fait passer les oraux.</p></div>
+          <div class="copy tint-blue"><span class="copy-tag">Copie</span><strong>Vous</strong><p>Gardez-la jusqu’au paiement de vos indemnités.</p></div>
+          <div class="copy tint-green"><span class="copy-tag">Exemplaire</span><strong>Votre établissement d’origine</strong><p>Il lance la mise en paiement (voir ci-dessous).</p></div>
+        </div>
+      </section>
+
       <div class="section grid grid-main-side">
-        <section class="card" id="montants">
-          <h2 class="card-title"><span class="icon-bubble sm" style="background:var(--blue);color:#fff"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#euro"></use></svg></span>Montants indicatifs (session 2027)</h2>
+        <section class="card" id="paiement">
+          <h2 class="card-title"><i data-icon="euro"></i>Qui vous paie&nbsp;?</h2>
           <div class="table-wrap">
             <table>
-              <thead><tr><th scope="col">Type d’indemnité</th><th scope="col">Montant indicatif</th><th scope="col">Conditions principales</th></tr></thead>
+              <thead><tr><th scope="col">Votre statut</th><th scope="col">Mise en paiement</th></tr></thead>
               <tbody>
-                <tr><th scope="row">Indemnité de jury</th><td>120&nbsp;€ par demi-journée</td><td>Selon la session et les modalités définies par la DEC.</td></tr>
-                <tr><th scope="row">Repas (per diem)</th><td>20&nbsp;€ par repas</td><td>Selon les conditions définies pour la session en cours.</td></tr>
-                <tr><th scope="row">Hébergement</th><td>Prise en charge réelle (selon plafond)</td><td>Réservation par l’établissement ou la coordination.</td></tr>
-                <tr><th scope="row">Transport</th><td>Selon distance et modalité</td><td>Organisation par l’établissement ou remboursement selon les cas.</td></tr>
+                <tr><th scope="row">Personnel détaché</th><td>Votre établissement d’origine transmet votre état de frais pour un paiement <b>via MAJ</b>.</td></tr>
+                <tr><th scope="row">Personnel recruté local</th><td>Le paiement est effectué <b>directement par votre établissement d’origine</b>.</td></tr>
               </tbody>
             </table>
           </div>
+          <p class="small muted mt-8">Une question sur le délai ou le montant&nbsp;? Adressez-vous d’abord au service de gestion de votre établissement d’origine.</p>
         </section>
         <div class="stack">
-          <section class="card tint-orange">
-            <h2 class="card-title orange" style="font-size:1.05rem;margin-bottom:8px"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#info"></use></svg>Ces montants sont donnés à titre indicatif</h2>
-            <p class="small">Les montants et modalités peuvent évoluer selon la session, les textes en vigueur et la situation de chaque mission. Référez-vous aux documents officiels et aux consignes de l’établissement d’accueil.</p>
-          </section>
-          <section class="card tint-green">
-            <h2 class="card-title green" style="font-size:1.05rem;color:var(--green)"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#bulb"></use></svg>Bon à savoir</h2>
+          <section class="card tint-red">
+            <h2 class="card-title red" style="font-size:1.05rem"><i data-icon="ban"></i>À ne pas faire</h2>
             <ul class="check-list small">
-              <li><span class="tick"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#check"></use></svg></span>Les indemnités de jury sont versées selon les modalités définies par la DEC.</li>
-              <li><span class="tick"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#check"></use></svg></span>Les frais de repas et d’hébergement sont pris en charge dans les conditions prévues.</li>
-              <li><span class="tick"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#check"></use></svg></span>Conservez tous vos justificatifs.</li>
-              <li><span class="tick"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#check"></use></svg></span>En cas de situation particulière, contactez l’établissement d’accueil ou la coordination.</li>
+              <li><span class="tick red"><i data-icon="x"></i></span><span>Repartir sans avoir fait signer l’état de frais.</span></li>
+              <li><span class="tick red"><i data-icon="x"></i></span><span>Emporter l’original&nbsp;: il reste dans l’établissement d’accueil.</span></li>
+              <li><span class="tick red"><i data-icon="x"></i></span><span>Oublier d’envoyer un exemplaire à votre établissement d’origine.</span></li>
+              <li><span class="tick red"><i data-icon="x"></i></span><span>Réserver ou payer vous-même billet ou hôtel.</span></li>
+            </ul>
+          </section>
+          <section class="card">
+            <h2 class="card-title" style="font-size:1.05rem"><i data-icon="folder"></i>Documents</h2>
+            <ul class="doc-list">
+              <li><a href="#a-venir"><i data-icon="file-pdf" class="doc-ic"></i><span><span class="doc-name">État de frais – jury d’examen</span><small>À compléter et faire signer</small></span><i data-icon="download" class="dl"></i></a></li>
+              <li><a href="#a-venir"><i data-icon="file-pdf" class="doc-ic"></i><span><span class="doc-name">Notice&nbsp;: remplir son état de frais</span><small>Pas à pas</small></span><i data-icon="download" class="dl"></i></a></li>
             </ul>
           </section>
         </div>
-      </div>
-
-      <div class="section grid grid-2">
-        <section class="card" id="justificatifs">
-          <h2 class="card-title"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#file"></use></svg>Quels justificatifs dois-je conserver&nbsp;?</h2>
-          <ul class="check-list">
-            <li><svg class="icon sq" aria-hidden="true"><use href="assets/icons.svg#square-check"></use></svg>Billet d’avion, de train ou autre titre de transport</li>
-            <li><svg class="icon sq" aria-hidden="true"><use href="assets/icons.svg#square-check"></use></svg>Carte d’embarquement (si demandée)</li>
-            <li><svg class="icon sq" aria-hidden="true"><use href="assets/icons.svg#square-check"></use></svg>Facture d’hébergement (si prise en charge)</li>
-            <li><svg class="icon sq" aria-hidden="true"><use href="assets/icons.svg#square-check"></use></svg>Justificatifs de repas (selon les modalités définies)</li>
-            <li><svg class="icon sq" aria-hidden="true"><use href="assets/icons.svg#square-check"></use></svg>Convocation et attestation de présence (si demandée)</li>
-            <li><svg class="icon sq" aria-hidden="true"><use href="assets/icons.svg#square-check"></use></svg>RIB (si nécessaire pour le versement des indemnités)</li>
-          </ul>
-        </section>
-        <section class="card">
-          <h2 class="card-title"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#refresh"></use></svg>Comment se passe le remboursement&nbsp;?</h2>
-          <ol class="timeline" style="padding:0;margin:0">
-            <li><span class="num bg-blue">1</span><div><strong>Je conserve tous mes justificatifs</strong><p>Billets, factures, justificatifs de repas, etc.</p></div></li>
-            <li><span class="num bg-purple">2</span><div><strong>Je transmets les documents demandés</strong><p>Selon les modalités communiquées par la coordination ou l’établissement.</p></div></li>
-            <li><span class="num bg-orange">3</span><div><strong>Les pièces sont vérifiées</strong><p>Par l’établissement ou la coordination.</p></div></li>
-            <li><span class="num bg-green">4</span><div><strong>Le remboursement est effectué</strong><p>Selon les délais et modalités en vigueur.</p></div></li>
-          </ol>
-        </section>
-      </div>
-
-      <div class="section grid grid-main-side">
-        <section class="card tint-red" style="border-color:#f6c3cc">
-          <h2 class="card-title red"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#ban"></use></svg>À ne pas faire</h2>
-          <ul class="check-list">
-            <li><span class="tick red"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#x"></use></svg></span>Ne pas acheter vous-même votre billet de transport (sauf instruction explicite).</li>
-            <li><span class="tick red"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#x"></use></svg></span>Ne pas réserver d’hôtel sans accord préalable.</li>
-            <li><span class="tick red"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#x"></use></svg></span>Ne pas engager de frais qui ne seraient pas prévus par les modalités en vigueur.</li>
-            <li><span class="tick red"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#x"></use></svg></span>Ne pas modifier votre itinéraire sans en informer l’établissement.</li>
-          </ul>
-        </section>
-        <section class="card">
-          <h2 class="card-title"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#folder"></use></svg>Documents utiles</h2>
-          <ul class="doc-list">
-            <li><a href="#a-venir"><svg class="icon doc-ic" aria-hidden="true"><use href="assets/icons.svg#file-pdf"></use></svg><span><span class="doc-name">Fiche indemnité de jury</span><small>PDF</small></span><svg class="icon dl" aria-hidden="true"><use href="assets/icons.svg#download"></use></svg></a></li>
-            <li><a href="#a-venir"><svg class="icon doc-ic" aria-hidden="true"><use href="assets/icons.svg#file-pdf"></use></svg><span><span class="doc-name">Tableau des montants (session 2027)</span><small>PDF</small></span><svg class="icon dl" aria-hidden="true"><use href="assets/icons.svg#download"></use></svg></a></li>
-            <li><a href="#a-venir"><svg class="icon doc-ic word" aria-hidden="true"><use href="assets/icons.svg#file"></use></svg><span><span class="doc-name">Modèle de justificatif</span><small>Word</small></span><svg class="icon dl" aria-hidden="true"><use href="assets/icons.svg#download"></use></svg></a></li>
-            <li><a href="#a-venir"><svg class="icon doc-ic" aria-hidden="true"><use href="assets/icons.svg#file-pdf"></use></svg><span><span class="doc-name">Procédure de remboursement</span><small>PDF</small></span><svg class="icon dl" aria-hidden="true"><use href="assets/icons.svg#download"></use></svg></a></li>
-          </ul>
-        </section>
-      </div>
-
-      <div class="section grid grid-2">
-        <section class="card">
-          <div class="grid grid-2" style="gap:24px">
-            <div>
-              <h2 class="card-title"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#help"></use></svg>Une question&nbsp;?</h2>
-              <p class="small">La coordination des examens est à votre disposition pour répondre à vos questions.</p>
-              <a class="contact-mail" href="mailto:examens.zese@lycee-chateaubriand.eu"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#mail"></use></svg>examens.zese@lycee-chateaubriand.eu</a>
-            </div>
-            <div class="hint" style="align-self:start"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#clock"></use></svg><div><p>Pensez à indiquer dans votre message&nbsp;:</p><ul class="bullet-list mt-8"><li>Votre nom et prénom</li><li>Votre discipline</li><li>L’établissement concerné</li><li>Les dates de votre mission</li><li>L’objet de votre demande</li></ul></div></div>
-          </div>
-        </section>
-        <section class="card">
-          <h2 class="card-title"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#help"></use></svg>Questions fréquentes</h2>
-          <ul class="faq-list">
-            <li><a href="faq.html#q-montants">Quels sont les montants des indemnités&nbsp;?<svg class="icon" aria-hidden="true"><use href="assets/icons.svg#chevron-right"></use></svg></a></li>
-            <li><a href="faq.html#q-frais">Quels frais sont pris en charge&nbsp;?<svg class="icon" aria-hidden="true"><use href="assets/icons.svg#chevron-right"></use></svg></a></li>
-            <li><a href="faq.html#q-quand">Comment et quand vais-je être remboursé(e)&nbsp;?<svg class="icon" aria-hidden="true"><use href="assets/icons.svg#chevron-right"></use></svg></a></li>
-            <li><a href="faq.html#q-justificatifs">Quels justificatifs dois-je fournir&nbsp;?<svg class="icon" aria-hidden="true"><use href="assets/icons.svg#chevron-right"></use></svg></a></li>
-            <li><a href="faq.html#q-sans-justificatif">Que faire si je n’ai pas de justificatif&nbsp;?<svg class="icon" aria-hidden="true"><use href="assets/icons.svg#chevron-right"></use></svg></a></li>
-          </ul>
-          <a class="btn btn-outline btn-block mt-16" href="faq.html">Voir toutes les questions <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#arrow-right"></use></svg></a>
-        </section>
       </div>
     </div>
   </main>

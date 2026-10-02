@@ -14,18 +14,19 @@
 
   var NAV = [
     { id: "accueil", href: "index.html", label: "Accueil", icon: "home" },
-    { id: "mission", href: "mission.html", label: "Ma mission", icon: "cap" },
-    { id: "deplacement", href: "deplacement.html", label: "Mon déplacement<br>et prise en charge", icon: "plane" },
-    { id: "indemnites", href: "indemnites.html", label: "Mes indemnités", icon: "coins" },
-    { id: "ressources", href: "ressources.html", label: "Mes ressources<br>et documents", icon: "file" },
+    { id: "convocation", href: "convocation.html", label: "Convocation<br>et absences", icon: "mail" },
+    { id: "deplacement", href: "deplacement.html", label: "Oraux avec<br>déplacement", icon: "plane" },
+    { id: "indemnites", href: "indemnites.html", label: "Frais, per diem<br>et indemnités", icon: "coins" },
+    { id: "second-groupe", href: "second-groupe.html", label: "Second groupe<br>(oraux en visio)", icon: "monitor" },
+    { id: "ressources", href: "ressources.html", label: "Documents et liens", icon: "folder" },
     { id: "faq", href: "faq.html", label: "FAQ", icon: "help" }
   ];
 
   var QUICK = [
-    { href: "ressources.html#calendrier", label: "Calendrier", icon: "calendar" },
-    { href: "ressources.html#guides", label: "Guides pratiques", icon: "book" },
-    { href: "faq.html", label: "FAQ", icon: "help" },
-    { href: "ressources.html", label: "Ressources", icon: "folder" }
+    { href: "indemnites.html#etat-de-frais", label: "État de frais", icon: "file" },
+    { href: "convocation.html#absence", label: "Absence", icon: "alert" },
+    { href: "second-groupe.html", label: "Second groupe", icon: "monitor" },
+    { href: "faq.html", label: "FAQ", icon: "help" }
   ];
 
   // Portail principal (établissements et coordination).
@@ -44,6 +45,11 @@
     "</svg>";
 
   var page = document.body.getAttribute("data-page") || "";
+
+  // Raccourci d'écriture dans les pages : <i data-icon="plane"></i> devient l'icône SVG.
+  Array.prototype.forEach.call(document.querySelectorAll("i[data-icon]"), function (el) {
+    el.outerHTML = icon(el.getAttribute("data-icon"), el.className);
+  });
 
   /* ---------- Barre latérale + barre du haut ---------- */
   var header = document.getElementById("site-header");
