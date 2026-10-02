@@ -13,13 +13,23 @@
   var CONTACT_EMAIL = "examens.zese@lycee-chateaubriand.eu";
 
   var NAV = [
-    { id: "accueil", href: "index.html", label: "Accueil" },
-    { id: "mission", href: "mission.html", label: "Ma mission" },
-    { id: "deplacement", href: "deplacement.html", label: "Mon déplacement" },
-    { id: "indemnites", href: "indemnites.html", label: "Mes indemnités" },
-    { id: "ressources", href: "ressources.html", label: "Mes ressources" },
-    { id: "faq", href: "faq.html", label: "FAQ" }
+    { id: "accueil", href: "index.html", label: "Accueil", icon: "home" },
+    { id: "mission", href: "mission.html", label: "Ma mission", icon: "cap" },
+    { id: "deplacement", href: "deplacement.html", label: "Mon déplacement<br>et prise en charge", icon: "plane" },
+    { id: "indemnites", href: "indemnites.html", label: "Mes indemnités", icon: "coins" },
+    { id: "ressources", href: "ressources.html", label: "Mes ressources<br>et documents", icon: "file" },
+    { id: "faq", href: "faq.html", label: "FAQ", icon: "help" }
   ];
+
+  var QUICK = [
+    { href: "ressources.html#calendrier", label: "Calendrier", icon: "calendar" },
+    { href: "ressources.html#guides", label: "Guides pratiques", icon: "book" },
+    { href: "faq.html", label: "FAQ", icon: "help" },
+    { href: "ressources.html", label: "Ressources", icon: "folder" }
+  ];
+
+  // Portail principal (établissements et coordination).
+  var PORTAIL_URL = "https://portail-examens-zese.netlify.app/";
 
   function icon(name, cls) {
     return '<svg class="icon' + (cls ? " " + cls : "") + '" aria-hidden="true"><use href="' + BASE + 'assets/icons.svg#' + name + '"></use></svg>';
@@ -35,50 +45,81 @@
 
   var page = document.body.getAttribute("data-page") || "";
 
-  /* ---------- Header ---------- */
+  /* ---------- Barre latérale + barre du haut ---------- */
   var header = document.getElementById("site-header");
   if (header) {
     var links = NAV.map(function (n) {
-      return '<li><a href="' + BASE + n.href + '"' + (n.id === page ? ' aria-current="page"' : "") + ">" + n.label + "</a></li>";
+      return '<li><a href="' + BASE + n.href + '"' + (n.id === page ? ' aria-current="page"' : "") + ">" +
+        icon(n.icon) + "<span>" + n.label + "</span></a></li>";
+    }).join("");
+    var quick = QUICK.map(function (q) {
+      return '<li><a href="' + BASE + q.href + '" title="' + q.label + '">' + icon(q.icon) + "<span>" + q.label + "</span></a></li>";
     }).join("");
     header.className = "site-header";
     header.innerHTML =
-      '<div class="container header-inner">' +
+      '<aside class="sidebar" id="sidebar">' +
       '<a class="brand" href="' + BASE + 'index.html" aria-label="Examens ZESE – accueil">' + LOGO +
-      '<span class="brand-text"><strong>Examens ZESE</strong><small>Zone Europe du Sud-Est</small></span></a>' +
-      '<span class="brand-tag">Espace enseignants</span>' +
-      '<button class="nav-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Ouvrir le menu">' + icon("menu") + "</button>" +
-      '<nav class="main-nav" id="main-nav" aria-label="Navigation principale"><ul>' + links + "</ul></nav>" +
+      '<span class="brand-text"><strong>Examens</strong><small>Zone Europe du Sud-Est</small></span></a>' +
+      '<p class="side-space">Espace enseignants</p>' +
+      '<nav class="side-nav" aria-label="Navigation principale"><ul>' + links +
+      '<li><a href="mailto:' + CONTACT_EMAIL + '">' + icon("mail") + "<span>Nous contacter</span></a></li>" +
+      "</ul></nav>" +
+      '<div class="side-map" aria-hidden="true"></div>' +
+      '<div class="side-rf"><span class="rf-flag" aria-hidden="true"><span style="background:#000091"></span><span style="background:#fff;outline:1px solid #eee"></span><span style="background:#e1000f"></span></span>' +
+      '<span class="rf-text">République<br>Française<em>Liberté<br>Égalité<br>Fraternité</em></span></div>' +
+      "</aside>" +
+      '<div class="side-backdrop" hidden></div>' +
+      '<div class="topbar">' +
+      '<button class="nav-toggle" aria-expanded="false" aria-controls="sidebar" aria-label="Ouvrir le menu">' + icon("menu") + "</button>" +
+      '<a class="topbar-brand" href="' + BASE + 'index.html">' + LOGO + "<strong>Examens ZESE</strong></a>" +
+      '<ul class="quick-links">' + quick + "</ul>" +
+      '<form class="top-search" role="search" action="' + BASE + 'faq.html">' + icon("search") +
+      '<label for="top-q" class="sr-only">Rechercher</label>' +
+      '<input id="top-q" name="q" type="search" placeholder="Rechercher une information…" autocomplete="off"></form>' +
       '<div class="lang-switch" role="group" aria-label="Langue">' +
       '<button type="button" aria-pressed="true" lang="fr">FR</button>' +
       '<button type="button" aria-pressed="false" lang="en" data-en>EN</button></div>' +
+      '<a class="btn-portail" href="' + PORTAIL_URL + '" target="_blank" rel="noopener" aria-label="Portail établissements (nouvel onglet)" title="Portail établissements">' + icon("landmark") + "<span>Portail établissements</span>" + icon("external") + "</a>" +
       "</div>";
 
     var toggle = header.querySelector(".nav-toggle");
-    var nav = header.querySelector(".main-nav");
-    toggle.addEventListener("click", function () {
-      var open = nav.classList.toggle("open");
+    var sidebar = header.querySelector(".sidebar");
+    var backdrop = header.querySelector(".side-backdrop");
+    function setMenu(open) {
+      sidebar.classList.toggle("open", open);
+      backdrop.hidden = !open;
       toggle.setAttribute("aria-expanded", open ? "true" : "false");
       toggle.setAttribute("aria-label", open ? "Fermer le menu" : "Ouvrir le menu");
-    });
+    }
+    toggle.addEventListener("click", function () { setMenu(!sidebar.classList.contains("open")); });
+    backdrop.addEventListener("click", function () { setMenu(false); });
+    document.addEventListener("keydown", function (e) { if (e.key === "Escape") setMenu(false); });
     header.querySelector("[data-en]").addEventListener("click", function () {
       toast("The English version is coming soon. / La version anglaise est en préparation.");
     });
+
+    // Sur la page FAQ, la recherche du haut filtre directement les questions.
+    header.querySelector(".top-search").addEventListener("submit", function (e) {
+      var faqInput = document.getElementById("faq-search");
+      if (!faqInput) return;
+      e.preventDefault();
+      faqInput.value = document.getElementById("top-q").value;
+      faqInput.dispatchEvent(new Event("input"));
+      faqInput.scrollIntoView({ block: "center" });
+    });
   }
 
-  /* ---------- Footer ---------- */
+  /* ---------- Pied de page ---------- */
   var footer = document.getElementById("site-footer");
   if (footer) {
     footer.className = "site-footer";
     footer.innerHTML =
       '<div class="container footer-inner">' +
-      '<div class="rf"><span class="rf-flag" aria-hidden="true"><span style="background:#000091"></span><span style="background:#fff;border-top:1px solid #eee;border-bottom:1px solid #eee"></span><span style="background:#e1000f"></span></span>' +
-      '<span class="rf-text">République<br>Française<em>Liberté<br>Égalité<br>Fraternité</em></span></div>' +
+      "<span>Examens ZESE – Espace enseignants · Zone Europe du Sud-Est</span>" +
       '<ul class="footer-links">' +
       '<li><a href="' + BASE + 'mentions-legales.html">Mentions légales</a></li>' +
       '<li><a href="' + BASE + 'accessibilite.html">Accessibilité</a></li>' +
       '<li><a href="mailto:' + CONTACT_EMAIL + '">Contact</a></li></ul>' +
-      '<div class="footer-brand"><span>Examens ZESE – Espace enseignants<br>Zone Europe du Sud-Est</span>' + LOGO + "</div>" +
       "</div>";
   }
 
@@ -138,5 +179,11 @@
       });
       empty.style.display = shown ? "none" : "block";
     });
+    var q0 = new URLSearchParams(location.search).get("q");
+    if (q0) {
+      search.value = q0;
+      document.getElementById("top-q").value = q0;
+      search.dispatchEvent(new Event("input"));
+    }
   }
 })();
