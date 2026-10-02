@@ -91,7 +91,7 @@ ul { margin: 0; padding: 0; }
   height: 3px; border-radius: 3px; background: var(--blue);
 }
 
-.lang-switch { display: flex; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+.lang-switch { flex-shrink: 0; display: flex; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
 .lang-switch button {
   border: 0; background: #fff; color: var(--ink); font: inherit; font-size: .8rem; font-weight: 700;
   padding: 6px 12px; cursor: pointer;
@@ -106,20 +106,23 @@ ul { margin: 0; padding: 0; }
 /* ---------- Hero ---------- */
 .hero {
   position: relative; overflow: hidden;
+  /* Carte de la zone : le dégradé à gauche garde le texte lisible. */
   background:
-    radial-gradient(1200px 400px at 75% 20%, rgba(80, 120, 255, .16), transparent 60%),
-    linear-gradient(180deg, #eef3ff 0%, #f5f7fd 100%);
-  padding: 40px 0 48px;
+    linear-gradient(90deg, #f3f7ff 0%, rgba(243, 247, 255, .94) 34%, rgba(243, 247, 255, .35) 58%, rgba(243, 247, 255, 0) 72%),
+    linear-gradient(0deg, #f5f7fd 0%, rgba(245, 247, 253, 0) 22%),
+    url("carte-zese.webp") right center / cover no-repeat,
+    #eef3ff;
+  padding: 40px 0 56px;
 }
 .hero .container { position: relative; display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); gap: 24px; align-items: center; }
 .hero-eyebrow { text-transform: uppercase; letter-spacing: .08em; font-size: .8rem; font-weight: 700; color: var(--navy); margin-bottom: 10px; }
 .hero h1 { font-size: clamp(2.2rem, 4.6vw, 3.4rem); font-weight: 800; letter-spacing: -.02em; color: var(--navy); }
 .hero-lead { margin-top: 14px; font-size: 1.15rem; font-weight: 600; color: var(--blue); }
 .hero-text { margin-top: 8px; font-size: 1.05rem; max-width: 560px; color: var(--ink); }
-.hero-art { position: relative; min-height: 220px; }
-.hero-art svg.map { width: 100%; height: auto; max-height: 300px; }
+.hero-art { position: relative; min-height: 240px; }
 .hero-note {
-  position: absolute; right: 0; top: 0;
+  position: absolute; right: 0; bottom: -24px;
+  padding: 6px 14px; border-radius: 14px; background: rgba(255, 255, 255, .72); backdrop-filter: blur(2px);
   font-family: var(--hand); font-size: 1.55rem; line-height: 1.15; color: var(--navy);
   transform: rotate(-8deg); text-align: center;
 }
@@ -135,10 +138,7 @@ ul { margin: 0; padding: 0; }
 .breadcrumb a:hover { text-decoration: underline; }
 .breadcrumb [aria-current] { color: var(--ink); }
 
-/* Marker pulse on hero maps */
-.pulse { transform-origin: center; transform-box: fill-box; animation: pulse 2.4s ease-out infinite; }
-@keyframes pulse { 0% { transform: scale(.6); opacity: .9; } 100% { transform: scale(2.4); opacity: 0; } }
-@media (prefers-reduced-motion: reduce) { .pulse { animation: none; } html { scroll-behavior: auto; } }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 
 /* ---------- Layout helpers ---------- */
 main { padding-bottom: 48px; }
@@ -432,7 +432,7 @@ td + td, th + td, th + th { border-left: 1px solid var(--line); }
 .center { text-align: center; }
 
 /* ---------- Responsive ---------- */
-@media (max-width: 1240px) {
+@media (max-width: 1360px) {
   .brand-tag { display: none; }
   .header-inner { gap: 16px; }
   .main-nav a { padding: 8px 9px; }
@@ -458,7 +458,12 @@ td + td, th + td, th + th { border-left: 1px solid var(--line); }
 
   .hero .container { grid-template-columns: 1fr; }
   .hero-art { min-height: 0; }
-  .hero-art svg.map { max-height: 200px; }
+  .hero {
+    background:
+      linear-gradient(0deg, #f5f7fd 0%, rgba(243, 247, 255, .9) 45%, rgba(243, 247, 255, .55) 100%),
+      url("carte-zese.webp") 70% center / cover no-repeat,
+      #eef3ff;
+  }
   .hero-note { font-size: 1.25rem; }
   .grid-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .grid-3 { grid-template-columns: minmax(0, 1fr); }

@@ -82,43 +82,6 @@
       "</div>";
   }
 
-  /* ---------- Decorative map (hero) ---------- */
-  // Rough silhouette of Europe, drawn as a dot grid, with the
-  // South-East zone highlighted and a pulsing marker.
-  var EUROPE = [[20,170],[30,140],[70,135],[80,110],[70,90],[100,80],[120,60],[150,55],[170,30],[200,35],[230,20],[280,25],[330,40],[370,60],[385,100],[360,130],[330,140],[312,152],[300,175],[285,200],[265,215],[252,240],[236,226],[240,203],[226,192],[212,186],[202,200],[192,214],[206,234],[196,246],[178,226],[164,200],[150,176],[130,162],[115,170],[100,176],[90,200],[60,212],[30,206]];
-  function inPoly(x, y, poly) {
-    var inside = false;
-    for (var i = 0, j = poly.length - 1; i < poly.length; j = i++) {
-      var xi = poly[i][0], yi = poly[i][1], xj = poly[j][0], yj = poly[j][1];
-      if ((yi > y) !== (yj > y) && x < ((xj - xi) * (y - yi)) / (yj - yi) + xi) inside = !inside;
-    }
-    return inside;
-  }
-  function mapSVG() {
-    var dots = "";
-    for (var y = 12; y < 252; y += 8) {
-      for (var x = 12; x < 392; x += 8) {
-        var ox = x + ((y / 8) % 2 ? 4 : 0);
-        if (!inPoly(ox, y, EUROPE)) continue;
-        var dx = ox - 238, dy = y - 165;
-        var zone = (dx * dx) / 3600 + (dy * dy) / 3000 < 1 || ((ox > 160 && ox < 215) && y > 175);
-        dots += '<circle cx="' + ox + '" cy="' + y + '" r="' + (zone ? 3.1 : 2.4) + '" fill="' + (zone ? "#1f45e0" : "#9db3f5") + '" opacity="' + (zone ? 0.95 : 0.55) + '"/>';
-      }
-    }
-    return (
-      '<svg class="map" viewBox="0 0 400 260" role="img" aria-label="Carte de la Zone Europe du Sud-Est">' +
-      '<defs><radialGradient id="glow"><stop offset="0" stop-color="#ffb21a"/><stop offset="1" stop-color="#ffb21a" stop-opacity="0"/></radialGradient></defs>' +
-      dots +
-      '<circle cx="232" cy="150" r="18" fill="url(#glow)"/>' +
-      '<circle class="pulse" cx="232" cy="150" r="7" fill="none" stroke="#f08a12" stroke-width="2"/>' +
-      '<circle cx="232" cy="150" r="5" fill="#f08a12" stroke="#fff" stroke-width="2"/>' +
-      "</svg>"
-    );
-  }
-  Array.prototype.forEach.call(document.querySelectorAll("[data-map]"), function (el) {
-    el.insertAdjacentHTML("afterbegin", mapSVG());
-  });
-
   /* ---------- Toast ---------- */
   var toastEl;
   function toast(msg) {
