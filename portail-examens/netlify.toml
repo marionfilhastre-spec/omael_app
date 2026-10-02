@@ -1,0 +1,16 @@
+# Configuration Netlify du portail Examens ZESE.
+# Sur Netlify : Site configuration > Build & deploy > Base directory = portail-examens
+[build]
+  publish = "."
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=3600"
