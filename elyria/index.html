@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0b0b12">
+<title>ELYRIA Prototype 0.1</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=La+Belle+Aurore&display=swap">
+<link rel="stylesheet" href="elyria.css">
+</head>
+<body>
+<div id="app">
+  <canvas id="scene" aria-hidden="true"></canvas>
+  <canvas id="fx" aria-hidden="true"></canvas>
+
+  <div id="bars" aria-hidden="true"><i class="bar top"></i><i class="bar bottom"></i></div>
+  <div id="echo-frame" aria-hidden="true"><div class="dots"><i></i><i></i><i></i></div></div>
+  <div id="fade" aria-hidden="true"></div>
+
+  <div id="prompts" aria-live="polite"></div>
+
+  <div id="subtitle" role="status" aria-live="polite"><span class="who"></span><span class="line"></span></div>
+
+  <ol id="choices" aria-label="Choix de dialogue"></ol>
+
+  <div id="portrait" aria-hidden="true"><img alt=""><img alt=""></div>
+
+  <div id="carnet-strip" aria-live="polite"><span></span></div>
+
+  <div id="resonance" aria-hidden="true">
+    <svg viewBox="0 0 120 120"><circle class="track" cx="60" cy="60" r="52"/><circle class="fill" cx="60" cy="60" r="52"/></svg>
+    <span class="label">Résonner</span>
+  </div>
+
+  <div id="inspect" hidden>
+    <div class="inspect-card">
+      <div class="inspect-img"><img alt=""></div>
+      <p class="inspect-name"></p>
+      <p class="inspect-text"></p>
+    </div>
+    <p class="inspect-hint"><kbd>E</kbd> Reposer</p>
+  </div>
+
+  <div id="photo" hidden>
+    <div class="photo-stage">
+      <div class="photo-card">
+        <div class="face back"><p>Pour quand tu auras oublié.</p></div>
+        <div class="face front"><img src="assets/img/photo_recto.jpg" alt="Une photographie ancienne, abîmée"></div>
+      </div>
+    </div>
+    <p class="photo-hint"></p>
+  </div>
+
+  <section id="title" class="screen">
+    <div class="title-inner">
+      <h1>ELYRIA</h1>
+      <p class="tagline">The Meaning of Us</p>
+      <p class="proto">Prototype 0.1 · Lac des Deux Lunes</p>
+      <div class="title-actions">
+        <button id="btn-start" class="btn primary" type="button">Commencer</button>
+        <button id="btn-continue" class="btn" type="button" hidden>Continuer</button>
+        <button id="btn-settings" class="btn ghost" type="button">Options</button>
+      </div>
+      <p class="hint">Casque recommandé · environ 12 minutes</p>
+    </div>
+  </section>
+
+  <section id="end" class="screen" hidden>
+    <div class="end-inner">
+      <p class="end-eyebrow">Fin du prototype 0.1</p>
+      <h2>Une Promesse</h2>
+      <div class="end-carnet"></div>
+      <div class="title-actions">
+        <button id="btn-replay" class="btn primary" type="button">Rejouer</button>
+        <button id="btn-end-facts" class="btn ghost" type="button">Voir les faits</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="carnet" class="screen" hidden aria-label="Carnet de souvenirs">
+    <div class="book">
+      <nav class="book-index">
+        <div class="tabs" role="tablist">
+          <button type="button" role="tab" data-tab="souvenirs" aria-selected="true">Souvenirs</button>
+          <button type="button" role="tab" data-tab="questions" aria-selected="false">Questions</button>
+        </div>
+        <ul class="entries"></ul>
+      </nav>
+      <article class="book-page"></article>
+      <button type="button" class="close" aria-label="Fermer le carnet">×</button>
+    </div>
+  </section>
+
+  <section id="pause" class="screen" hidden aria-label="Pause">
+    <div class="panel">
+      <h2>Pause</h2>
+      <div class="title-actions vertical">
+        <button type="button" class="btn primary" data-act="resume">Reprendre</button>
+        <button type="button" class="btn" data-act="carnet">Carnet</button>
+        <button type="button" class="btn" data-act="settings">Options</button>
+        <button type="button" class="btn ghost" data-act="facts">Faits du monde</button>
+        <button type="button" class="btn ghost" data-act="title">Écran titre</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="settings" class="screen" hidden aria-label="Options">
+    <div class="panel">
+      <h2>Options</h2>
+      <label class="opt"><span>Taille des sous-titres</span>
+        <select id="opt-subs"><option value="m">Normale</option><option value="l">Grande</option><option value="xl">Très grande</option></select></label>
+      <label class="opt"><span>Réduire flashs et particules</span><input id="opt-calm" type="checkbox"></label>
+      <label class="opt"><span>Appui simple au lieu de maintenir</span><input id="opt-tap" type="checkbox"></label>
+      <label class="opt"><span>Feuille dorée quand un choix est retenu</span><input id="opt-leaf" type="checkbox" checked></label>
+      <label class="opt"><span>Volume</span><input id="opt-vol" type="range" min="0" max="1" step="0.05" value="0.8"></label>
+      <div class="title-actions"><button type="button" class="btn primary" data-act="close">Fermer</button></div>
+    </div>
+  </section>
+
+  <aside id="facts" hidden aria-label="Faits du WorldState">
+    <header><strong>WorldState</strong><span>F pour fermer</span></header>
+    <div class="facts-list"></div>
+    <h3>Journal</h3>
+    <ol class="facts-log"></ol>
+  </aside>
+
+  <button id="menu-btn" type="button" aria-label="Pause" hidden><i></i><i></i></button>
+  <div id="save-icon" aria-hidden="true"></div>
+</div>
+
+<script src="js/data.js"></script>
+<script src="js/worldstate.js"></script>
+<script src="js/audio.js"></script>
+<script src="js/renderer.js"></script>
+<script src="js/fx.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/game.js"></script>
+</body>
+</html>
