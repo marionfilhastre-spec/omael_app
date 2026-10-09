@@ -9,7 +9,7 @@
   --text: #3a4470;
   --muted: #6b7397;
   --line: #e2e7f5;
-  --bg: #f5f7fd;
+  --bg: #eef2f9;
   --card: #ffffff;
 
   --blue: #1f45e0;
@@ -146,13 +146,15 @@ body { padding-left: var(--side); }
 /* ---------- Hero ---------- */
 .hero {
   position: relative; overflow: hidden;
-  /* Carte de la zone : le dégradé à gauche garde le texte lisible. */
-  background:
-    linear-gradient(90deg, #f3f7ff 0%, rgba(243, 247, 255, .94) 34%, rgba(243, 247, 255, .35) 58%, rgba(243, 247, 255, 0) 72%),
-    linear-gradient(0deg, #f5f7fd 0%, rgba(245, 247, 253, 0) 22%),
-    url("carte-zese.webp") right center / cover no-repeat,
-    #eef3ff;
-  padding: 40px 0 56px;
+  background: linear-gradient(180deg, #e4ecfb 0%, #edf2fb 70%, var(--bg) 100%);
+  padding: 28px 0 40px;
+}
+/* Carte de la zone, fondue sur les bords, comme sur le portail de zone */
+.hero::before {
+  content: ""; position: absolute; top: 0; bottom: 0; right: 0; width: 64%; pointer-events: none;
+  background: url("carte-zese.webp") 58% 42% / cover no-repeat;
+  -webkit-mask-image: radial-gradient(ellipse 62% 78% at 58% 42%, #000 38%, transparent 82%);
+  mask-image: radial-gradient(ellipse 62% 78% at 58% 42%, #000 38%, transparent 82%);
 }
 .hero .container { position: relative; display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); gap: 24px; align-items: center; }
 .hero-eyebrow { text-transform: uppercase; letter-spacing: .08em; font-size: .8rem; font-weight: 700; color: var(--navy); margin-bottom: 10px; }
@@ -161,14 +163,13 @@ body { padding-left: var(--side); }
 .hero-text { margin-top: 8px; font-size: 1.05rem; max-width: 560px; color: var(--ink); }
 .hero-art { position: relative; min-height: 240px; }
 .hero-note {
-  position: absolute; right: 0; bottom: -24px;
-  padding: 6px 14px; border-radius: 14px; background: rgba(255, 255, 255, .72); backdrop-filter: blur(2px);
-  font-family: var(--hand); font-size: 1.55rem; line-height: 1.15; color: var(--navy);
-  transform: rotate(-8deg); text-align: center;
+  position: absolute; right: 0; top: -6px;
+  font-family: var(--hand); font-size: 1.9rem; line-height: 1.12; color: var(--navy);
+  transform: rotate(-9deg); text-align: center; text-shadow: 0 0 12px rgba(255, 255, 255, .9), 0 0 4px #fff;
 }
 .hero-note::after {
-  content: ""; display: block; width: 70%; height: 3px; margin: 6px auto 0;
-  background: var(--purple); border-radius: 3px; transform: rotate(-3deg);
+  content: ""; display: block; width: 62%; height: 3px; margin: 8px 0 0 auto;
+  background: var(--navy); border-radius: 3px; transform: rotate(-4deg);
 }
 
 .breadcrumb { font-size: .9rem; margin-bottom: 14px; }
@@ -490,12 +491,7 @@ td + td, th + td, th + th { border-left: 1px solid var(--line); }
 
   .hero .container { grid-template-columns: 1fr; }
   .hero-art { min-height: 0; }
-  .hero {
-    background:
-      linear-gradient(0deg, #f5f7fd 0%, rgba(243, 247, 255, .9) 45%, rgba(243, 247, 255, .55) 100%),
-      url("carte-zese.webp") 70% center / cover no-repeat,
-      #eef3ff;
-  }
+  .hero::before { width: 100%; opacity: .28; }
   .hero-note { font-size: 1.25rem; }
   .grid-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .grid-3 { grid-template-columns: minmax(0, 1fr); }
@@ -565,4 +561,77 @@ td + td, th + td, th + th { border-left: 1px solid var(--line); }
   .steps[style*="repeat(4"] .step:nth-child(2)::after { display: none; }
 }
 
-.card, .step, .check-list li { min-width: 0; overflow-wrap: break-word; }
+.card, .step, .check-list li { min-width: 0; }
+.card { overflow-wrap: break-word; }
+.step h3 { hyphens: auto; }
+
+/* ==========================================================
+   Thème du portail de zone : thématiques, recherche, tableaux
+   ========================================================== */
+:root { --pink: #d6286a; --pink-soft: #fdecf3; --indigo: #3b3fc9; --indigo-soft: #eceefd; }
+.card { border-color: #e1e7f4; }
+.tint-pink { background: var(--pink-soft); }
+.icon-bubble.pink { background: #f9d2e2; color: var(--pink); }
+.icon-bubble.indigo { background: #d9dcfb; color: var(--indigo); }
+.c-pink { color: var(--pink); } .bg-pink { background: var(--pink); }
+
+/* Barre de recherche sous le bandeau */
+.search-card { padding: 18px 22px; }
+.search-card form { display: flex; gap: 12px; }
+.search-card .field { position: relative; flex: 1; }
+.search-card .field .icon { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); font-size: 1.3rem; color: var(--navy); }
+.search-card input {
+  width: 100%; font: inherit; padding: 13px 14px 13px 48px; border: 1.5px solid #cfd8ee; border-radius: 10px; background: #fff; color: var(--ink);
+}
+.search-card button { border: 0; border-radius: 10px; padding: 0 26px; background: var(--side-bg); color: #fff; font: inherit; font-weight: 700; cursor: pointer; }
+.search-card button:hover { background: var(--side-bg2); }
+.search-examples { margin-top: 10px; font-size: .9rem; color: var(--ink); }
+.search-examples a { color: var(--navy); text-decoration: none; }
+.search-examples a:hover { text-decoration: underline; color: var(--blue); }
+.search-examples a + a::before { content: "·"; margin: 0 8px; color: var(--muted); }
+
+/* Parcourir par thématique */
+.themes { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 14px; }
+.theme {
+  position: relative; display: flex; flex-direction: column; gap: 8px; padding: 18px 16px 44px;
+  border-radius: 12px; text-decoration: none; color: var(--ink); transition: transform .15s, box-shadow .15s;
+}
+.theme:hover { transform: translateY(-2px); box-shadow: var(--shadow-hover); }
+.theme h3 { font-size: 1.02rem; font-weight: 800; line-height: 1.2; }
+.theme p { font-size: .86rem; color: var(--text); }
+.theme .count {
+  position: absolute; top: 12px; right: 12px; min-width: 30px; padding: 2px 9px; border-radius: 999px;
+  color: #fff; font-size: .8rem; font-weight: 800; text-align: center;
+}
+.theme .arrow { position: absolute; right: 14px; bottom: 12px; font-size: 1.15rem; }
+.theme.purple h3, .theme.purple .arrow { color: var(--purple); } .theme.purple .count { background: #b48af3; }
+.theme.green h3, .theme.green .arrow { color: var(--green); } .theme.green .count { background: #6cc49b; }
+.theme.orange h3, .theme.orange .arrow { color: var(--orange); } .theme.orange .count { background: #f5b45e; }
+.theme.pink h3, .theme.pink .arrow { color: var(--pink); } .theme.pink .count { background: #ec84ac; }
+.theme.indigo h3, .theme.indigo .arrow { color: var(--indigo); } .theme.indigo .count { background: #8e91ea; }
+.theme.blue h3, .theme.blue .arrow { color: var(--blue); } .theme.blue .count { background: #7f9cf0; }
+
+/* Tableaux de documents */
+.doc-table td, .doc-table th { vertical-align: middle; padding: 11px 14px; }
+.doc-table .doc-cell { display: flex; align-items: center; gap: 12px; color: var(--ink); font-weight: 500; }
+.doc-table .doc-cell .icon { font-size: 1.35rem; color: var(--red); }
+.pill { display: inline-block; font-size: .76rem; font-weight: 700; padding: 3px 9px; border-radius: 6px; white-space: nowrap; }
+.pill.pdf { background: #fdecef; color: var(--red); }
+.pill.word { background: #e5edff; color: var(--blue); }
+.pill.excel { background: #e3f6ec; color: var(--green); }
+.pill.new { background: var(--red); color: #fff; margin-left: 8px; }
+.pill.theme-purple { background: var(--purple-soft); color: var(--purple); }
+.pill.theme-orange { background: var(--orange-soft); color: #c06a00; }
+.pill.theme-green { background: var(--green-soft); color: var(--green); }
+.pill.theme-pink { background: var(--pink-soft); color: var(--pink); }
+.dl-link { display: inline-flex; align-items: center; gap: 6px; color: var(--blue); font-weight: 600; text-decoration: none; white-space: nowrap; }
+.dl-link:hover { text-decoration: underline; }
+.card-head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-bottom: 14px; }
+.card-head .card-title { margin-bottom: 0; }
+
+@media (max-width: 1280px) { .themes { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (max-width: 600px) {
+  .themes { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .search-card form { flex-direction: column; }
+  .search-card button { padding: 12px; }
+}

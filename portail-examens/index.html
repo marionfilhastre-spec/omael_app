@@ -31,45 +31,63 @@
     </section>
 
     <div class="container">
-      <!-- Rubriques -->
-      <div class="grid grid-3 feature-cards">
-        <a class="feature tint-purple" href="convocation.html">
-          <span class="icon-bubble purple"><i data-icon="mail"></i></span>
-          <h2>Convocation et absences</h2>
-          <p>Comment vous recevez votre convocation et que faire si vous ne pouvez pas être présent(e).</p>
-          <span class="go purple" aria-hidden="true"><i data-icon="arrow-right"></i></span>
-        </a>
-        <a class="feature tint-blue" href="deplacement.html">
-          <span class="icon-bubble blue"><i data-icon="plane"></i></span>
-          <h2>Oraux avec déplacement</h2>
-          <p>Grand oral, oral de français&nbsp;: transport, hébergement, textes et bordereaux.</p>
-          <span class="go blue" aria-hidden="true"><i data-icon="arrow-right"></i></span>
-        </a>
-        <a class="feature tint-orange" href="indemnites.html">
-          <span class="icon-bubble orange"><i data-icon="coins"></i></span>
-          <h2>Frais et indemnités</h2>
-          <p>Per diem, nuitées, état de frais et paiement des indemnités de jury.</p>
-          <span class="go orange" aria-hidden="true"><i data-icon="arrow-right"></i></span>
-        </a>
-        <a class="feature tint-green" href="second-groupe.html">
-          <span class="icon-bubble green"><i data-icon="monitor"></i></span>
-          <h2>Second groupe</h2>
-          <p>Oraux en visio depuis votre établissement, sujets sur la banque en ligne.</p>
-          <span class="go green" aria-hidden="true"><i data-icon="arrow-right"></i></span>
-        </a>
-        <a class="feature tint-blue" href="ressources.html">
-          <span class="icon-bubble blue"><i data-icon="folder"></i></span>
-          <h2>Documents et liens</h2>
-          <p>État de frais, plateformes, textes officiels et guides pratiques.</p>
-          <span class="go blue" aria-hidden="true"><i data-icon="arrow-right"></i></span>
-        </a>
-        <a class="feature tint-purple" href="faq.html">
-          <span class="icon-bubble purple"><i data-icon="help"></i></span>
-          <h2>Questions fréquentes</h2>
-          <p>Les réponses aux questions les plus souvent posées par les enseignants.</p>
-          <span class="go purple" aria-hidden="true"><i data-icon="arrow-right"></i></span>
-        </a>
-      </div>
+      <!-- Recherche -->
+      <section class="card search-card feature-cards" aria-label="Rechercher">
+        <form action="faq.html">
+          <div class="field"><i data-icon="search"></i><label for="home-q" class="sr-only">Rechercher une information</label><input id="home-q" name="q" type="search" placeholder="Rechercher une information, une procédure…" autocomplete="off"></div>
+          <button type="submit">Rechercher</button>
+        </form>
+        <p class="search-examples">Exemples de recherche&nbsp;: <a href="faq.html?q=certificat">certificat médical</a><a href="faq.html?q=%C3%A9tat%20de%20frais">état de frais</a><a href="faq.html?q=per%20diem">per diem</a><a href="faq.html?q=h%C3%B4tel">hôtel</a><a href="faq.html?q=bordereaux">bordereaux</a><a href="faq.html?q=visio">second groupe</a></p>
+      </section>
+
+      <!-- Thématiques -->
+      <section class="section card" aria-labelledby="themes-titre">
+        <h2 class="card-title" id="themes-titre"><i data-icon="landmark"></i>Parcourir par thématique</h2>
+        <div class="themes">
+          <a class="theme tint-purple purple" href="convocation.html">
+            <span class="count" title="3 questions fréquentes">3</span>
+            <span class="icon-bubble sm purple"><i data-icon="mail"></i></span>
+            <h3>Convocation et absences</h3>
+            <p>Réception par mail, caractère obligatoire, certificat médical…</p>
+            <i data-icon="arrow-right" class="arrow"></i>
+          </a>
+          <a class="theme tint-green green" href="deplacement.html">
+            <span class="count" title="6 questions fréquentes">6</span>
+            <span class="icon-bubble sm green"><i data-icon="plane"></i></span>
+            <h3>Oraux avec déplacement</h3>
+            <p>Grand oral, oral de français, trajet, hébergement…</p>
+            <i data-icon="arrow-right" class="arrow"></i>
+          </a>
+          <a class="theme tint-orange orange" href="indemnites.html">
+            <span class="count" title="5 questions fréquentes">5</span>
+            <span class="icon-bubble sm orange"><i data-icon="coins"></i></span>
+            <h3>Frais et indemnités</h3>
+            <p>Per diem, nuitées, état de frais, paiement…</p>
+            <i data-icon="arrow-right" class="arrow"></i>
+          </a>
+          <a class="theme tint-pink pink" href="second-groupe.html">
+            <span class="count" title="3 questions fréquentes">3</span>
+            <span class="icon-bubble sm pink"><i data-icon="monitor"></i></span>
+            <h3>Second groupe</h3>
+            <p>Oraux en visio, banque des sujets en ligne…</p>
+            <i data-icon="arrow-right" class="arrow"></i>
+          </a>
+          <a class="theme tint-indigo indigo" href="ressources.html">
+            <span class="count" title="6 documents">6</span>
+            <span class="icon-bubble sm indigo"><i data-icon="folder"></i></span>
+            <h3>Documents et liens</h3>
+            <p>État de frais, plateformes, guides, textes officiels…</p>
+            <i data-icon="arrow-right" class="arrow"></i>
+          </a>
+          <a class="theme tint-blue blue" href="faq.html">
+            <span class="count" title="18 questions">18</span>
+            <span class="icon-bubble sm blue"><i data-icon="help"></i></span>
+            <h3>Questions fréquentes</h3>
+            <p>Toutes les réponses aux questions des enseignants…</p>
+            <i data-icon="arrow-right" class="arrow"></i>
+          </a>
+        </div>
+      </section>
 
       <!-- Règles essentielles -->
       <section class="section rules" aria-labelledby="regles-titre">
@@ -100,7 +118,7 @@
       </section>
 
       <!-- Parcours + accès rapides -->
-      <div class="section grid grid-main-side">
+      <div class="section">
         <section class="card" aria-labelledby="parcours-titre">
           <h2 class="card-title" id="parcours-titre"><i data-icon="calendar"></i>Le parcours d’un enseignant convoqué</h2>
           <ol class="steps" style="list-style:none;padding:0;margin:0">
@@ -112,17 +130,7 @@
           </ol>
         </section>
 
-        <section class="card" aria-labelledby="acces-titre">
-          <h2 class="card-title" id="acces-titre"><i data-icon="link"></i>Accès rapides</h2>
-          <ul class="link-list">
-            <li><a href="indemnites.html#etat-de-frais"><i data-icon="file"></i>État de frais&nbsp;: la démarche<i data-icon="chevron-right"></i></a></li>
-            <li><a href="convocation.html#absence"><i data-icon="alert"></i>Signaler une absence<i data-icon="chevron-right"></i></a></li>
-            <li><a href="second-groupe.html#banque"><i data-icon="book"></i>Banque des sujets (second groupe)<i data-icon="chevron-right"></i></a></li>
-            <li><a href="deplacement.html#francais"><i data-icon="mic"></i>Textes de l’oral de français<i data-icon="chevron-right"></i></a></li>
-            <li><a href="deplacement.html#bordereaux"><i data-icon="square-check"></i>Bordereaux de notation<i data-icon="chevron-right"></i></a></li>
-            <li><a href="ressources.html#plateformes"><i data-icon="laptop"></i>Plateformes et connexion<i data-icon="chevron-right"></i></a></li>
-          </ul>
-        </section>
+
       </div>
 
       <!-- Qui contacter / FAQ -->
@@ -145,6 +153,7 @@
           <p class="small muted">Indiquez dans votre message votre nom, votre discipline, votre établissement et l’examen concerné.</p>
         </section>
 
+<div class="stack">
         <section class="card" aria-labelledby="faq-titre">
           <h2 class="card-title" id="faq-titre"><i data-icon="help"></i>Questions fréquentes</h2>
           <ul class="faq-list">
@@ -157,6 +166,18 @@
           </ul>
           <a class="btn btn-outline btn-block mt-16" href="faq.html">Voir toutes les questions <i data-icon="arrow-right"></i></a>
         </section>
+        <section class="card" aria-labelledby="acces-titre">
+          <h2 class="card-title" id="acces-titre"><i data-icon="link"></i>Accès rapides</h2>
+          <ul class="link-list">
+            <li><a href="indemnites.html#etat-de-frais"><i data-icon="file"></i>État de frais&nbsp;: la démarche<i data-icon="chevron-right"></i></a></li>
+            <li><a href="convocation.html#absence"><i data-icon="alert"></i>Signaler une absence<i data-icon="chevron-right"></i></a></li>
+            <li><a href="second-groupe.html#banque"><i data-icon="book"></i>Banque des sujets (second groupe)<i data-icon="chevron-right"></i></a></li>
+            <li><a href="deplacement.html#francais"><i data-icon="mic"></i>Textes de l’oral de français<i data-icon="chevron-right"></i></a></li>
+            <li><a href="deplacement.html#bordereaux"><i data-icon="square-check"></i>Bordereaux de notation<i data-icon="chevron-right"></i></a></li>
+            <li><a href="ressources.html#plateformes"><i data-icon="laptop"></i>Plateformes et connexion<i data-icon="chevron-right"></i></a></li>
+          </ul>
+        </section>
+        </div>
       </div>
     </div>
   </main>
