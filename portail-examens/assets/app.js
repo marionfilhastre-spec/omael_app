@@ -36,14 +36,6 @@
     return '<svg class="icon' + (cls ? " " + cls : "") + '" aria-hidden="true"><use href="' + BASE + 'assets/icons.svg#' + name + '"></use></svg>';
   }
 
-  var LOGO =
-    '<svg class="brand-logo" viewBox="0 0 48 48" aria-hidden="true">' +
-    '<path d="M8 30c2-6 1-10 6-13 4-2 6-7 11-7 3 0 5 3 9 2 4-1 7 2 7 6 0 3-3 4-3 8 0 3 3 5 1 8-2 3-6 1-8 4-1 2 0 5-3 6-2 0-3-3-5-3-3 0-5 3-8 1-3-2 1-5-1-8-2-2-7-1-6-4z" fill="#1f45e0"/>' +
-    '<path d="M4 34c6 2 12 0 16-4" stroke="#d61f3c" stroke-width="3.2" fill="none" stroke-linecap="round"/>' +
-    '<g fill="#fff"><circle cx="24" cy="15" r="1.4"/><circle cx="30" cy="17" r="1.4"/><circle cx="33" cy="23" r="1.4"/><circle cx="30" cy="29" r="1.4"/><circle cx="24" cy="31" r="1.4"/><circle cx="18" cy="23" r="1.4"/><circle cx="19" cy="17" r="1.4"/></g>' +
-    '<circle cx="40" cy="10" r="3" fill="#d61f3c"/><circle cx="6" cy="16" r="2.2" fill="#d61f3c"/>' +
-    "</svg>";
-
   var page = document.body.getAttribute("data-page") || "";
 
   // Raccourci d'écriture dans les pages : <i data-icon="plane"></i> devient l'icône SVG.
@@ -64,20 +56,17 @@
     header.className = "site-header";
     header.innerHTML =
       '<aside class="sidebar" id="sidebar">' +
-      '<a class="brand" href="' + BASE + 'index.html" aria-label="Examens ZESE – accueil">' + LOGO +
-      '<span class="brand-text"><strong>Examens</strong><small>Zone Europe du Sud-Est</small></span></a>' +
+      '<a class="brand" href="' + BASE + 'index.html" aria-label="Examens ZESE – accueil">' +
+      '<span class="brand-text"><strong>Examens ZESE</strong><small>Zone Europe du Sud-Est</small></span></a>' +
       '<p class="side-space">Espace enseignants</p>' +
       '<nav class="side-nav" aria-label="Navigation principale"><ul>' + links +
       '<li><a href="mailto:' + CONTACT_EMAIL + '">' + icon("mail") + "<span>Nous contacter</span></a></li>" +
       "</ul></nav>" +
-      '<div class="side-map" aria-hidden="true"></div>' +
-      '<div class="side-rf"><span class="rf-flag" aria-hidden="true"><span style="background:#000091"></span><span style="background:#fff;outline:1px solid #eee"></span><span style="background:#e1000f"></span></span>' +
-      '<span class="rf-text">République<br>Française<em>Liberté<br>Égalité<br>Fraternité</em></span></div>' +
       "</aside>" +
       '<div class="side-backdrop" hidden></div>' +
       '<div class="topbar">' +
       '<button class="nav-toggle" aria-expanded="false" aria-controls="sidebar" aria-label="Ouvrir le menu">' + icon("menu") + "</button>" +
-      '<a class="topbar-brand" href="' + BASE + 'index.html">' + LOGO + "<strong>Examens ZESE</strong></a>" +
+      '<a class="topbar-brand" href="' + BASE + 'index.html"><strong>Examens ZESE</strong></a>' +
       '<ul class="quick-links">' + quick + "</ul>" +
       '<form class="top-search" role="search" action="' + BASE + 'faq.html">' + icon("search") +
       '<label for="top-q" class="sr-only">Rechercher</label>' +
