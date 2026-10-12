@@ -113,12 +113,6 @@ body { padding-left: var(--side); }
   width: 100%; font: inherit; font-size: .88rem; padding: 9px 12px 9px 36px;
   border: 1px solid #d3dbf0; border-radius: 8px; background: #fff; color: var(--ink);
 }
-.lang-switch { flex-shrink: 0; display: flex; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
-.lang-switch button {
-  border: 0; background: #fff; color: var(--ink); font: inherit; font-size: .8rem; font-weight: 700;
-  padding: 6px 10px; cursor: pointer;
-}
-.lang-switch button[aria-pressed="true"] { background: var(--navy); color: #fff; }
 .nav-toggle {
   display: none; border: 1px solid var(--line); background: #fff; flex-shrink: 0;
   border-radius: 8px; width: 42px; height: 42px; color: var(--navy); font-size: 1.3rem; cursor: pointer;

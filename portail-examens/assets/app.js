@@ -68,9 +68,6 @@
       '<form class="top-search" role="search" action="' + BASE + 'faq.html">' + icon("search") +
       '<label for="top-q" class="sr-only">Rechercher</label>' +
       '<input id="top-q" name="q" type="search" placeholder="Rechercher une information…" autocomplete="off"></form>' +
-      '<div class="lang-switch" role="group" aria-label="Langue">' +
-      '<button type="button" aria-pressed="true" lang="fr">FR</button>' +
-      '<button type="button" aria-pressed="false" lang="en" data-en>EN</button></div>' +
       "</div>";
 
     var toggle = header.querySelector(".nav-toggle");
@@ -85,9 +82,6 @@
     toggle.addEventListener("click", function () { setMenu(!sidebar.classList.contains("open")); });
     backdrop.addEventListener("click", function () { setMenu(false); });
     document.addEventListener("keydown", function (e) { if (e.key === "Escape") setMenu(false); });
-    header.querySelector("[data-en]").addEventListener("click", function () {
-      toast("The English version is coming soon. / La version anglaise est en préparation.");
-    });
 
     // Sur la page FAQ, la recherche du haut filtre directement les questions.
     header.querySelector(".top-search").addEventListener("submit", function (e) {
