@@ -27,7 +27,7 @@ Les icônes sont dans `assets/icons.svg`, les styles dans `assets/style.css`.
 
 - Les liens `href="#a-venir"` (documents PDF, plateformes, espace DEC) : déposer les fichiers dans un dossier `docs/` et remplacer les liens. Tant qu'un lien vaut `#a-venir`, un message « document mis en ligne prochainement » s'affiche.
 - `ressources.html` : nom et liens des plateformes (Imag'in, banque des sujets) à confirmer.
-- `ije.html` : vérifier le circuit de paiement (MAJ pour les détachés).
+- `ije.html` : contenu issu de la note AEFE « Organisation des examens – session 2026 » et des modèles F1/F2 ; barèmes à mettre à jour à chaque session.
 - `mentions-legales.html` : nom du directeur de la publication.
 
 ## Prévisualiser en local
