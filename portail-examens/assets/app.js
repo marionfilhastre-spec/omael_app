@@ -29,9 +29,6 @@
     { href: "faq.html", label: "FAQ", icon: "help" }
   ];
 
-  // Portail principal (établissements et coordination).
-  var PORTAIL_URL = "https://portail-examens-zese.netlify.app/";
-
   function icon(name, cls) {
     return '<svg class="icon' + (cls ? " " + cls : "") + '" aria-hidden="true"><use href="' + BASE + 'assets/icons.svg#' + name + '"></use></svg>';
   }
@@ -74,7 +71,6 @@
       '<div class="lang-switch" role="group" aria-label="Langue">' +
       '<button type="button" aria-pressed="true" lang="fr">FR</button>' +
       '<button type="button" aria-pressed="false" lang="en" data-en>EN</button></div>' +
-      '<a class="btn-portail" href="' + PORTAIL_URL + '" target="_blank" rel="noopener" aria-label="Portail établissements (nouvel onglet)" title="Portail établissements">' + icon("landmark") + "<span>Portail établissements</span>" + icon("external") + "</a>" +
       "</div>";
 
     var toggle = header.querySelector(".nav-toggle");

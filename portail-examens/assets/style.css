@@ -119,13 +119,6 @@ body { padding-left: var(--side); }
   padding: 6px 10px; cursor: pointer;
 }
 .lang-switch button[aria-pressed="true"] { background: var(--navy); color: #fff; }
-.btn-portail {
-  flex-shrink: 0; display: flex; align-items: center; gap: 10px; padding: 10px 14px; border-radius: 8px;
-  background: var(--side-bg); color: #fff; text-decoration: none; font-weight: 700; font-size: .9rem; white-space: nowrap;
-}
-.btn-portail .icon { font-size: 1.2rem; }
-.btn-portail .icon:last-child { font-size: .9rem; opacity: .8; }
-.btn-portail:hover { background: var(--side-bg2); }
 .nav-toggle {
   display: none; border: 1px solid var(--line); background: #fff; flex-shrink: 0;
   border-radius: 8px; width: 42px; height: 42px; color: var(--navy); font-size: 1.3rem; cursor: pointer;
@@ -456,8 +449,7 @@ td + td, th + td, th + th { border-left: 1px solid var(--line); }
 /* ---------- Responsive ---------- */
 @media (max-width: 1500px) {
   .quick-links a { padding: 8px; }
-  .quick-links a span, .btn-portail span { display: none; }
-}
+  .quick-links a span, }
 @media (max-width: 1360px) {
   .quick-links { display: none; }
 }
