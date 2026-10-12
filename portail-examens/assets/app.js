@@ -16,7 +16,8 @@
     { id: "accueil", href: "index.html", label: "Accueil", icon: "home" },
     { id: "convocation", href: "convocation.html", label: "Convocation<br>et absences", icon: "mail" },
     { id: "deplacement", href: "deplacement.html", label: "Oraux avec<br>déplacement", icon: "plane" },
-    { id: "indemnites", href: "indemnites.html", label: "Frais, per diem<br>et indemnités", icon: "coins" },
+    { id: "indemnites", href: "indemnites.html", label: "Frais de mission<br>(per diem, nuitées)", icon: "bed" },
+    { id: "ije", href: "ije.html", label: "Indemnités de jury (IJE)", icon: "euro" },
     { id: "second-groupe", href: "second-groupe.html", label: "Second groupe<br>(oraux en visio)", icon: "monitor" },
     { id: "ressources", href: "ressources.html", label: "Documents et liens", icon: "folder" },
     { id: "faq", href: "faq.html", label: "Questions fréquentes", icon: "help" },
@@ -24,7 +25,7 @@
   ];
 
   var QUICK = [
-    { href: "indemnites.html#etat-de-frais", label: "État de frais" },
+    { href: "ije.html#etat-de-frais", label: "État de frais (IJE)" },
     { href: "convocation.html#absence", label: "Signaler une absence" },
     { href: "ressources.html", label: "Documents" }
   ];
@@ -105,7 +106,8 @@
       '<div><h2 class="footer-title">Rubriques</h2><ul class="footer-list">' +
       '<li><a href="' + BASE + 'convocation.html">Convocation et absences</a></li>' +
       '<li><a href="' + BASE + 'deplacement.html">Oraux avec déplacement</a></li>' +
-      '<li><a href="' + BASE + 'indemnites.html">Frais et indemnités</a></li>' +
+      '<li><a href="' + BASE + 'indemnites.html">Frais de mission</a></li>' +
+      '<li><a href="' + BASE + 'ije.html">Indemnités de jury (IJE)</a></li>' +
       '<li><a href="' + BASE + 'second-groupe.html">Second groupe</a></li></ul></div>' +
       '<div><h2 class="footer-title">Aide</h2><ul class="footer-list">' +
       '<li><a href="' + BASE + 'faq.html">Questions fréquentes</a></li>' +

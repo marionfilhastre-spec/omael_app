@@ -12,7 +12,8 @@ Site d'information commun à tous les enseignants (pas d'espace personnel).
 | `index.html` | Accueil : rubriques, 3 règles à retenir, parcours, qui contacter |
 | `convocation.html` | Convocation par mail professionnel, caractère obligatoire, procédure d'absence (certificat médical) |
 | `deplacement.html` | Grand oral et oral de français : trajet proposé par l'établissement d'accueil, nuitées, per diem, textes, bordereaux |
-| `indemnites.html` | Frais de mission, état de frais (signature du chef d'établissement d'accueil, circuit des exemplaires), paiement MAJ / recrutés locaux |
+| `indemnites.html` | Frais de mission : transport, nuitées, per diem |
+| `ije.html` | Indemnités de jury d’examen : état de frais signé par le chef de l’établissement d’ccueil, circuit des exemplaires, paiement MAJ / recrutés locaux, documents |
 | `second-groupe.html` | Oraux en visio depuis l'établissement d'origine, banque des sujets en ligne |
 | `ressources.html` | Plateformes, formulaires, guides, textes officiels, calendrier |
 | `faq.html` | Questions fréquentes avec recherche |
