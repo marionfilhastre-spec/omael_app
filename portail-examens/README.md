@@ -16,6 +16,7 @@ Site d'information commun à tous les enseignants (pas d'espace personnel).
 | `second-groupe.html` | Oraux en visio depuis l'établissement d'origine, banque des sujets en ligne |
 | `ressources.html` | Plateformes, formulaires, guides, textes officiels, calendrier |
 | `faq.html` | Questions fréquentes avec recherche |
+| `contact.html` | Nous contacter : à qui s’dresser, absence urgente, formulaire qui prépare un mail pré-rempli |
 | `mentions-legales.html`, `accessibilite.html`, `404.html` | Pages annexes |
 
 L'en-tête et le pied de page sont générés par `assets/app.js` (menu à modifier en un seul endroit : tableau `NAV`).

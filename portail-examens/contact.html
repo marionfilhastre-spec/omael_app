@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nous contacter – Examens ZESE</title>
+  <meta name="description" content="Contacter la coordination des examens de la Zone Europe du Sud-Est, ou le bon interlocuteur selon votre question.">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Public+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-page="contact">
+  <a class="skip-link" href="#contenu">Aller au contenu</a>
+  <header id="site-header"></header>
+
+  <main id="contenu">
+    <section class="hero">
+      <div class="container">
+        <div>
+          <nav class="breadcrumb" aria-label="Fil d’Ariane"><ol><li><a href="index.html">Accueil</a></li><li aria-current="page">Nous contacter</li></ol></nav>
+          <h1>Nous contacter</h1>
+          <p class="hero-text">Selon votre question, le bon interlocuteur n’est pas toujours le même. Vérifiez d’abord à qui vous adresser&nbsp;: vous obtiendrez une réponse plus rapidement.</p>
+        </div>
+        <div class="hero-art">
+          <p class="hero-note">Une question&nbsp;?<br>Nous sommes là<br>pour vous aider&nbsp;!</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="container">
+      <section class="card search-card feature-cards" aria-label="Rechercher dans la FAQ">
+        <form action="faq.html">
+          <div class="field"><i data-icon="search"></i><label for="contact-q" class="sr-only">Rechercher dans les questions fréquentes</label><input id="contact-q" name="q" type="search" placeholder="Avant d’écrire, cherchez votre question dans la FAQ…" autocomplete="off"></div>
+          <button type="submit">Rechercher</button>
+        </form>
+        <p class="search-examples">Questions les plus posées&nbsp;: <a href="faq.html#q-empechement">je suis malade</a><a href="faq.html#q-signature">signature de l’état de frais</a><a href="faq.html#q-detache">qui me paie&nbsp;?</a><a href="faq.html#q-sujets-sg">sujets du second groupe</a></p>
+      </section>
+
+      <section class="section" aria-labelledby="qui-titre">
+        <h2 class="card-title" id="qui-titre"><i data-icon="users"></i>À qui vous adresser&nbsp;?</h2>
+        <div class="route-cards">
+          <article class="card route">
+            <span class="who">Votre établissement d’origine</span>
+            <h3>Votre situation administrative</h3>
+            <ul>
+              <li>Adresse mail professionnelle erronée</li>
+              <li>Convocation non reçue</li>
+              <li>Paiement des indemnités (MAJ ou recrutés locaux)</li>
+              <li>Transmission de votre état de frais</li>
+            </ul>
+          </article>
+          <article class="card route">
+            <span class="who">L’établissement d’accueil</span>
+            <h3>Votre venue pour les oraux</h3>
+            <ul>
+              <li>Proposition de vol ou de train</li>
+              <li>Hôtel, horaires, plan d’accès</li>
+              <li>Textes de l’oral de français</li>
+              <li>Bordereaux de notation, signature de l’état de frais</li>
+            </ul>
+          </article>
+          <article class="card route highlight">
+            <span class="who">La coordination des examens ZESE</span>
+            <h3>Tout le reste</h3>
+            <ul>
+              <li>Absence (avec certificat médical)</li>
+              <li>Question sur l’organisation des examens</li>
+              <li>Second groupe en visio</li>
+              <li>Document ou information manquant sur ce site</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="section alert-banner" aria-labelledby="urgence-titre">
+        <i data-icon="alert"></i>
+        <div>
+          <h2 id="urgence-titre">Absence le jour même&nbsp;?</h2>
+          <p>Prévenez d’abord <b>directement l’établissement où se déroule l’épreuve</b> (par téléphone si possible), puis écrivez à la coordination en joignant votre certificat médical. <a href="convocation.html#absence">Voir la procédure d’absence</a></p>
+        </div>
+      </section>
+
+      <div class="section grid grid-main-side">
+        <section class="card" aria-labelledby="form-titre">
+          <h2 class="card-title" id="form-titre"><i data-icon="pen"></i>Écrire à la coordination</h2>
+          <p class="small muted" style="margin-bottom:16px">Remplissez ces champs&nbsp;: nous préparons un mail complet dans votre messagerie, il ne vous reste qu’à l’envoyer. Aucune donnée n’est enregistrée par ce site.</p>
+          <form id="contact-form" novalidate>
+            <div class="form-grid">
+              <div><label class="field-label" for="c-nom">Nom et prénom <span class="req">*</span></label><input id="c-nom" required autocomplete="name"></div>
+              <div><label class="field-label" for="c-etab">Établissement d’origine <span class="req">*</span></label><input id="c-etab" required placeholder="Ex. : Lycée français de…"></div>
+              <div><label class="field-label" for="c-discipline">Discipline</label><input id="c-discipline"></div>
+              <div><label class="field-label" for="c-examen">Examen ou épreuve</label>
+                <select id="c-examen">
+                  <option value="">Choisir…</option>
+                  <option>Baccalauréat – Grand oral</option>
+                  <option>Baccalauréat – oral de français</option>
+                  <option>Baccalauréat – second groupe</option>
+                  <option>Baccalauréat – correction des écrits</option>
+                  <option>DNB</option>
+                  <option>Autre</option>
+                </select>
+              </div>
+              <div class="full"><label class="field-label" for="c-objet">Objet de votre demande <span class="req">*</span></label>
+                <select id="c-objet" required>
+                  <option value="">Choisir…</option>
+                  <option>Absence</option>
+                  <option>Convocation</option>
+                  <option>Déplacement et hébergement</option>
+                  <option>État de frais et indemnités</option>
+                  <option>Second groupe</option>
+                  <option>Autre question</option>
+                </select>
+              </div>
+              <div class="full"><label class="field-label" for="c-message">Votre message <span class="req">*</span></label><textarea id="c-message" required placeholder="Décrivez votre situation, avec les dates concernées."></textarea></div>
+            </div>
+            <div class="form-actions">
+              <button type="submit" class="btn btn-navy"><i data-icon="mail"></i>Ouvrir le mail dans ma messagerie</button>
+              <button type="button" class="btn btn-outline" id="contact-copy"><i data-icon="file"></i>Copier le message</button>
+            </div>
+          </form>
+        </section>
+
+        <aside class="stack">
+          <section class="card contact-direct">
+            <h2 class="card-title" style="margin-bottom:4px"><i data-icon="mail"></i>Adresse de la coordination</h2>
+            <p class="mail-big">examens.zese@lycee-chateaubriand.eu</p>
+            <p class="small muted">Pensez à joindre vos pièces (certificat médical, état de frais…) au mail.</p>
+          </section>
+          <section class="card">
+            <h2 class="card-title" style="font-size:1rem;margin-bottom:10px"><i data-icon="file"></i>Aperçu de votre message</h2>
+            <pre class="preview" id="contact-preview" aria-live="polite"></pre>
+          </section>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <footer id="site-footer"></footer>
+  <script src="assets/app.js"></script>
+</body>
+</html>

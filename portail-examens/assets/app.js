@@ -19,14 +19,14 @@
     { id: "indemnites", href: "indemnites.html", label: "Frais, per diem<br>et indemnités", icon: "coins" },
     { id: "second-groupe", href: "second-groupe.html", label: "Second groupe<br>(oraux en visio)", icon: "monitor" },
     { id: "ressources", href: "ressources.html", label: "Documents et liens", icon: "folder" },
-    { id: "faq", href: "faq.html", label: "FAQ", icon: "help" }
+    { id: "faq", href: "faq.html", label: "Questions fréquentes", icon: "help" },
+    { id: "contact", href: "contact.html", label: "Nous contacter", icon: "message" }
   ];
 
   var QUICK = [
-    { href: "indemnites.html#etat-de-frais", label: "État de frais", icon: "file" },
-    { href: "convocation.html#absence", label: "Absence", icon: "alert" },
-    { href: "second-groupe.html", label: "Second groupe", icon: "monitor" },
-    { href: "faq.html", label: "FAQ", icon: "help" }
+    { href: "indemnites.html#etat-de-frais", label: "État de frais" },
+    { href: "convocation.html#absence", label: "Signaler une absence" },
+    { href: "ressources.html", label: "Documents" }
   ];
 
   function icon(name, cls) {
@@ -48,7 +48,7 @@
         icon(n.icon) + "<span>" + n.label + "</span></a></li>";
     }).join("");
     var quick = QUICK.map(function (q) {
-      return '<li><a href="' + BASE + q.href + '" title="' + q.label + '">' + icon(q.icon) + "<span>" + q.label + "</span></a></li>";
+      return '<li><a href="' + BASE + q.href + '">' + q.label + "</a></li>";
     }).join("");
     header.className = "site-header";
     header.innerHTML =
@@ -57,7 +57,6 @@
       '<span class="brand-text"><strong>Examens ZESE</strong><small>Zone Europe du Sud-Est</small></span></a>' +
       '<p class="side-space">Espace enseignants</p>' +
       '<nav class="side-nav" aria-label="Navigation principale"><ul>' + links +
-      '<li><a href="mailto:' + CONTACT_EMAIL + '">' + icon("mail") + "<span>Nous contacter</span></a></li>" +
       "</ul></nav>" +
       "</aside>" +
       '<div class="side-backdrop" hidden></div>' +
@@ -68,6 +67,7 @@
       '<form class="top-search" role="search" action="' + BASE + 'faq.html">' + icon("search") +
       '<label for="top-q" class="sr-only">Rechercher</label>' +
       '<input id="top-q" name="q" type="search" placeholder="Rechercher une information…" autocomplete="off"></form>' +
+      '<a class="top-contact" href="' + BASE + 'contact.html">' + icon("message") + "<span>Nous contacter</span></a>" +
       "</div>";
 
     var toggle = header.querySelector(".nav-toggle");
@@ -99,13 +99,27 @@
   if (footer) {
     footer.className = "site-footer";
     footer.innerHTML =
-      '<div class="container footer-inner">' +
-      "<span>Examens ZESE – Espace enseignants · Zone Europe du Sud-Est</span>" +
+      '<div class="container footer-grid">' +
+      '<div class="footer-about"><strong>Examens ZESE – Espace enseignants</strong>' +
+      "<p>Informations pratiques pour les enseignants convoqués aux examens de la Zone Europe du Sud-Est&nbsp;: convocation, déplacements, frais, second groupe.</p></div>" +
+      '<div><h2 class="footer-title">Rubriques</h2><ul class="footer-list">' +
+      '<li><a href="' + BASE + 'convocation.html">Convocation et absences</a></li>' +
+      '<li><a href="' + BASE + 'deplacement.html">Oraux avec déplacement</a></li>' +
+      '<li><a href="' + BASE + 'indemnites.html">Frais et indemnités</a></li>' +
+      '<li><a href="' + BASE + 'second-groupe.html">Second groupe</a></li></ul></div>' +
+      '<div><h2 class="footer-title">Aide</h2><ul class="footer-list">' +
+      '<li><a href="' + BASE + 'faq.html">Questions fréquentes</a></li>' +
+      '<li><a href="' + BASE + 'ressources.html">Documents et liens</a></li>' +
+      '<li><a href="' + BASE + 'contact.html">Nous contacter</a></li></ul></div>' +
+      '<div><h2 class="footer-title">Coordination des examens</h2>' +
+      '<p class="footer-mail"><a href="mailto:' + CONTACT_EMAIL + '">' + CONTACT_EMAIL + "</a></p></div>" +
+      "</div>" +
+      '<div class="footer-bottom"><div class="container footer-bottom-inner">' +
+      "<span>Zone Europe du Sud-Est · Session 2026-2027</span>" +
       '<ul class="footer-links">' +
       '<li><a href="' + BASE + 'mentions-legales.html">Mentions légales</a></li>' +
-      '<li><a href="' + BASE + 'accessibilite.html">Accessibilité</a></li>' +
-      '<li><a href="mailto:' + CONTACT_EMAIL + '">Contact</a></li></ul>' +
-      "</div>";
+      '<li><a href="' + BASE + 'accessibilite.html">Accessibilité</a></li></ul>' +
+      "</div></div>";
   }
 
   /* ---------- Toast ---------- */
@@ -131,6 +145,42 @@
       toast("Ce document sera mis en ligne prochainement.");
     }
   });
+
+  /* ---------- Page contact : prépare un mail pré-rempli ---------- */
+  var cform = document.getElementById("contact-form");
+  if (cform) {
+    var out = document.getElementById("contact-preview");
+    var build = function () {
+      var v = function (id) { return (document.getElementById(id).value || "").trim(); };
+      var objet = v("c-objet") || "Question";
+      var subject = "[Examens ZESE] " + objet + (v("c-nom") ? " – " + v("c-nom") : "");
+      var body =
+        "Bonjour,\n\n" + (v("c-message") || "…") + "\n\n" +
+        "Nom et prénom : " + v("c-nom") + "\n" +
+        "Établissement d’origine : " + v("c-etab") + "\n" +
+        "Discipline : " + v("c-discipline") + "\n" +
+        "Examen / épreuve : " + v("c-examen") + "\n\n" +
+        "Cordialement,\n" + v("c-nom");
+      return { subject: subject, body: body };
+    };
+    var refresh = function () {
+      var m = build();
+      out.textContent = "Objet : " + m.subject + "\n\n" + m.body;
+    };
+    cform.addEventListener("input", refresh);
+    refresh();
+    cform.addEventListener("submit", function (e) {
+      e.preventDefault();
+      if (!cform.reportValidity()) return;
+      var m = build();
+      location.href = "mailto:" + CONTACT_EMAIL + "?subject=" + encodeURIComponent(m.subject) + "&body=" + encodeURIComponent(m.body);
+    });
+    document.getElementById("contact-copy").addEventListener("click", function () {
+      var m = build(), text = "À : " + CONTACT_EMAIL + "\nObjet : " + m.subject + "\n\n" + m.body;
+      var done = function () { toast("Message copié : collez-le dans votre messagerie."); };
+      if (navigator.clipboard) navigator.clipboard.writeText(text).then(done, function () { toast("Copie impossible : sélectionnez le texte de l’aperçu."); });
+    });
+  }
 
   /* ---------- FAQ: open the question targeted by the URL hash, and search ---------- */
   function openHash() {
