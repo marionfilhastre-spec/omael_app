@@ -20,3 +20,9 @@
   from = "/mission.html"
   to = "/convocation.html"
   status = 301
+
+# Ancienne page « Frais de mission », fusionnée dans « Déplacement et frais »
+[[redirects]]
+  from = "/indemnites.html"
+  to = "/deplacement.html"
+  status = 301

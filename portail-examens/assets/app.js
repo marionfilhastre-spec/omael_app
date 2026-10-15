@@ -12,21 +12,28 @@
 
   var CONTACT_EMAIL = "examens.zese@lycee-chateaubriand.eu";
 
+  // Menu organisé par mission. Une entrée { group: "…" } affiche un intertitre.
   var NAV = [
     { id: "accueil", href: "index.html", label: "Accueil", icon: "home" },
-    { id: "convocation", href: "convocation.html", label: "Convocation<br>et absences", icon: "mail" },
-    { id: "deplacement", href: "deplacement.html", label: "Oraux avec<br>déplacement", icon: "plane" },
-    { id: "indemnites", href: "indemnites.html", label: "Frais de mission<br>(per diem, nuitées)", icon: "bed" },
-    { id: "ije", href: "ije.html", label: "Indemnités de jury (IJE)", icon: "euro" },
-    { id: "second-groupe", href: "second-groupe.html", label: "Second groupe<br>(oraux en visio)", icon: "monitor" },
+    { id: "convocation", href: "convocation.html", label: "Convocation et absence", icon: "alert" },
+    { group: "Je corrige des copies" },
+    { id: "correction", href: "correction.html", label: "Correction des écrits", icon: "pen" },
+    { group: "J’interroge à l’oral" },
+    { id: "oral-francais", href: "oral-francais.html", label: "Oral de français", icon: "book" },
+    { id: "grand-oral", href: "grand-oral.html", label: "Grand oral", icon: "mic" },
+    { id: "second-groupe", href: "second-groupe.html", label: "Second groupe (visio)", icon: "monitor" },
+    { id: "deplacement", href: "deplacement.html", label: "Déplacement et frais", icon: "plane" },
+    { group: "Être payé(e)" },
+    { id: "ije", href: "ije.html", label: "État de frais et IJE", icon: "euro" },
+    { group: "Aide" },
     { id: "ressources", href: "ressources.html", label: "Documents et liens", icon: "folder" },
     { id: "faq", href: "faq.html", label: "Questions fréquentes", icon: "help" },
     { id: "contact", href: "contact.html", label: "Nous contacter", icon: "message" }
   ];
 
   var QUICK = [
-    { href: "ije.html#etat-de-frais", label: "État de frais (IJE)" },
-    { href: "convocation.html#absence", label: "Signaler une absence" },
+    { href: "ije.html", label: "État de frais" },
+    { href: "convocation.html#absence", label: "Absence" },
     { href: "ressources.html", label: "Documents" }
   ];
 
@@ -45,6 +52,7 @@
   var header = document.getElementById("site-header");
   if (header) {
     var links = NAV.map(function (n) {
+      if (n.group) return '<li class="side-group">' + n.group + "</li>";
       return '<li><a href="' + BASE + n.href + '"' + (n.id === page ? ' aria-current="page"' : "") + ">" +
         icon(n.icon) + "<span>" + n.label + "</span></a></li>";
     }).join("");
@@ -56,7 +64,6 @@
       '<aside class="sidebar" id="sidebar">' +
       '<a class="brand" href="' + BASE + 'index.html" aria-label="Examens ZESE – accueil">' +
       '<span class="brand-text"><strong>Examens ZESE</strong><small>Zone Europe du Sud-Est</small></span></a>' +
-      '<p class="side-space">Espace enseignants</p>' +
       '<nav class="side-nav" aria-label="Navigation principale"><ul>' + links +
       "</ul></nav>" +
       "</aside>" +
@@ -103,12 +110,12 @@
       '<div class="container footer-grid">' +
       '<div class="footer-about"><strong>Examens ZESE – Espace enseignants</strong>' +
       "<p>Informations pratiques pour les enseignants convoqués aux examens de la Zone Europe du Sud-Est&nbsp;: convocation, déplacements, frais, second groupe.</p></div>" +
-      '<div><h2 class="footer-title">Rubriques</h2><ul class="footer-list">' +
-      '<li><a href="' + BASE + 'convocation.html">Convocation et absences</a></li>' +
-      '<li><a href="' + BASE + 'deplacement.html">Oraux avec déplacement</a></li>' +
-      '<li><a href="' + BASE + 'indemnites.html">Frais de mission</a></li>' +
-      '<li><a href="' + BASE + 'ije.html">Indemnités de jury (IJE)</a></li>' +
-      '<li><a href="' + BASE + 'second-groupe.html">Second groupe</a></li></ul></div>' +
+      '<div><h2 class="footer-title">Ma mission</h2><ul class="footer-list">' +
+      '<li><a href="' + BASE + 'correction.html">Correction des écrits</a></li>' +
+      '<li><a href="' + BASE + 'oral-francais.html">Oral de français</a></li>' +
+      '<li><a href="' + BASE + 'grand-oral.html">Grand oral</a></li>' +
+      '<li><a href="' + BASE + 'second-groupe.html">Second groupe</a></li>' +
+      '<li><a href="' + BASE + 'ije.html">État de frais et IJE</a></li></ul></div>' +
       '<div><h2 class="footer-title">Aide</h2><ul class="footer-list">' +
       '<li><a href="' + BASE + 'faq.html">Questions fréquentes</a></li>' +
       '<li><a href="' + BASE + 'ressources.html">Documents et liens</a></li>' +

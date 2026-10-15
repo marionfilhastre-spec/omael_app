@@ -9,15 +9,15 @@ Site d'information commun à tous les enseignants (pas d'espace personnel).
 
 | Fichier | Contenu |
 |---|---|
-| `index.html` | Accueil : rubriques, 3 règles à retenir, parcours, qui contacter |
-| `convocation.html` | Convocation par mail professionnel, caractère obligatoire, procédure d'absence (certificat médical) |
-| `deplacement.html` | Grand oral et oral de français : trajet proposé par l'établissement d'accueil, nuitées, per diem, textes, bordereaux |
-| `indemnites.html` | Frais de mission : transport, nuitées, per diem |
-| `ije.html` | Indemnités de jury d’examen : état de frais signé par le chef de l’établissement d’ccueil, circuit des exemplaires, paiement MAJ / recrutés locaux, documents |
-| `second-groupe.html` | Oraux en visio depuis l'établissement d'origine, banque des sujets en ligne |
-| `ressources.html` | Plateformes, formulaires, guides, textes officiels, calendrier |
-| `faq.html` | Questions fréquentes avec recherche |
-| `contact.html` | Nous contacter : à qui s’dresser, absence urgente, formulaire qui prépare un mail pré-rempli |
+| `index.html` | Accueil : l’essentiel (absence, convocation, état de frais), choix de la mission, « être payé(e) » en 3 étapes |
+| `convocation.html` | Convocation par mail professionnel, caractère obligatoire, procédure d’absence (certificat médical) |
+| `correction.html` | Correcteurs : SANTORIN / VIATIQUE, réunions, état de frais F1 |
+| `oral-francais.html` | Oral de français : Drive des œuvres et textes, déroulement, état de frais F2 |
+| `grand-oral.html` | Grand oral : rôle de l’examinateur non spécialiste, déroulement, état de frais F2 |
+| `second-groupe.html` | Second groupe en visio, sujets en ligne, état de frais F2 |
+| `deplacement.html` | Déplacement et frais de mission : ordre de mission, transport, nuitées, per diem |
+| `ije.html` | État de frais et IJE : F1/F2, signataires, paiement selon le statut, barèmes, documents |
+| `ressources.html`, `faq.html`, `contact.html` | Documents, questions fréquentes, contact |
 | `mentions-legales.html`, `accessibilite.html`, `404.html` | Pages annexes |
 
 L'en-tête et le pied de page sont générés par `assets/app.js` (menu à modifier en un seul endroit : tableau `NAV`).

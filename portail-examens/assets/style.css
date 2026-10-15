@@ -713,3 +713,59 @@ h1, h2, h3 { letter-spacing: -.01em; }
 @media (max-width: 600px) { .form-grid { grid-template-columns: minmax(0, 1fr); } }
 
 @media (max-width: 1320px) { .quick-links { display: none; } }
+
+/* Intertitres du menu latéral */
+.side-nav ul { padding-top: 10px; }
+.side-group { margin: 14px 12px 4px; font-size: .68rem; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; color: var(--muted); }
+.side-nav a { padding: 8px 12px; }
+
+/* ---------- Parcours par mission ---------- */
+.roles { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+.role { display: flex; flex-direction: column; gap: 14px; padding: 26px; }
+.role-head { display: flex; gap: 14px; align-items: center; }
+.role-head .icon-bubble { width: 52px; height: 52px; font-size: 1.5rem; }
+.kicker { display: block; font-size: .72rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.role h2 { font-size: 1.3rem; color: var(--navy); }
+.role .btn { align-self: flex-start; }
+.oral-picks { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+.oral-pick {
+  display: flex; flex-direction: column; gap: 6px; padding: 14px; border: 1px solid #dfe5f2; border-radius: 10px;
+  text-decoration: none; color: var(--text); background: #f9fafd; transition: border-color .15s, background .15s;
+}
+.oral-pick:hover { border-color: var(--blue); background: #fff; }
+.oral-pick .icon { font-size: 1.35rem; color: var(--blue); }
+.oral-pick strong { color: var(--navy); font-size: .98rem; }
+.oral-pick span { font-size: .84rem; }
+
+.essentials { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+.essential { display: flex; gap: 14px; align-items: flex-start; background: #fff; border: 1px solid #e3e8f4; border-radius: 10px; padding: 16px; }
+.essential > .icon { font-size: 1.5rem; flex-shrink: 0; margin-top: 2px; color: var(--blue); }
+.essential.urgent { background: var(--red-soft); border-color: #f2c4cc; }
+.essential.urgent > .icon { color: var(--red); }
+.essential strong { display: block; color: var(--navy); margin-bottom: 4px; }
+.essential p { font-size: .92rem; }
+
+.pay-steps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; counter-reset: pay; }
+.pay-step { position: relative; padding: 18px 18px 18px 60px; background: #f7f9fd; border: 1px solid #e3e9f5; border-radius: 10px; }
+.pay-step::before {
+  counter-increment: pay; content: counter(pay); position: absolute; left: 16px; top: 16px;
+  width: 30px; height: 30px; border-radius: 50%; background: var(--navy); color: #fff; font-weight: 800; display: grid; place-items: center;
+}
+.pay-step strong { display: block; color: var(--navy); margin-bottom: 4px; }
+.pay-step p { font-size: .92rem; }
+
+.phase { display: inline-block; font-size: .72rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--blue); background: var(--blue-soft); padding: 4px 10px; border-radius: 999px; margin-bottom: 10px; }
+.phase.after { color: #b45c00; background: var(--orange-soft); }
+.phase.day { color: var(--green); background: var(--green-soft); }
+.tldr { background: #fff; border: 1px solid #d6dff4; border-radius: 12px; padding: 20px 22px; box-shadow: inset 4px 0 0 var(--navy); }
+.tldr h2 { font-size: 1.05rem; margin-bottom: 10px; }
+.tldr ol { margin: 0; padding-left: 20px; display: grid; gap: 6px; }
+.role-note { background: var(--blue-soft); border: 1px solid #d3defd; border-radius: 12px; padding: 18px 20px; }
+.role-note h3 { font-size: 1.02rem; margin-bottom: 6px; }
+
+@media (max-width: 1100px) { .roles { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 960px) { .essentials, .pay-steps { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 600px) { .oral-picks { grid-template-columns: minmax(0, 1fr); } }
+.oral-picks.four { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+@media (max-width: 1100px) { .oral-picks.four { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 600px) { .oral-picks.four { grid-template-columns: minmax(0, 1fr); } }
