@@ -17,7 +17,8 @@
     { id: "accueil", href: "index.html", label: "Accueil", icon: "home" },
     { id: "convocation", href: "convocation.html", label: "Convocation et absence", icon: "alert" },
     { group: "Je corrige des copies" },
-    { id: "correction", href: "correction.html", label: "Correction des écrits", icon: "pen" },
+    { id: "correction", href: "correction.html", label: "Baccalauréat – écrits", icon: "pen" },
+    { id: "dnb", href: "dnb.html", label: "Brevet (DNB)", icon: "cap" },
     { group: "J’interroge à l’oral" },
     { id: "oral-francais", href: "oral-francais.html", label: "Oral de français", icon: "book" },
     { id: "grand-oral", href: "grand-oral.html", label: "Grand oral", icon: "mic" },
@@ -29,12 +30,6 @@
     { id: "ressources", href: "ressources.html", label: "Documents et liens", icon: "folder" },
     { id: "faq", href: "faq.html", label: "Questions fréquentes", icon: "help" },
     { id: "contact", href: "contact.html", label: "Nous contacter", icon: "message" }
-  ];
-
-  var QUICK = [
-    { href: "ije.html", label: "État de frais" },
-    { href: "convocation.html#absence", label: "Absence" },
-    { href: "ressources.html", label: "Documents" }
   ];
 
   function icon(name, cls) {
@@ -56,9 +51,6 @@
       return '<li><a href="' + BASE + n.href + '"' + (n.id === page ? ' aria-current="page"' : "") + ">" +
         icon(n.icon) + "<span>" + n.label + "</span></a></li>";
     }).join("");
-    var quick = QUICK.map(function (q) {
-      return '<li><a href="' + BASE + q.href + '">' + q.label + "</a></li>";
-    }).join("");
     header.className = "site-header";
     header.innerHTML =
       '<aside class="sidebar" id="sidebar">' +
@@ -71,7 +63,6 @@
       '<div class="topbar">' +
       '<button class="nav-toggle" aria-expanded="false" aria-controls="sidebar" aria-label="Ouvrir le menu">' + icon("menu") + "</button>" +
       '<a class="topbar-brand" href="' + BASE + 'index.html"><strong>Examens ZESE</strong></a>' +
-      '<ul class="quick-links">' + quick + "</ul>" +
       '<form class="top-search" role="search" action="' + BASE + 'faq.html">' + icon("search") +
       '<label for="top-q" class="sr-only">Rechercher</label>' +
       '<input id="top-q" name="q" type="search" placeholder="Rechercher une information…" autocomplete="off"></form>' +
@@ -111,7 +102,8 @@
       '<div class="footer-about"><strong>Examens ZESE – Espace enseignants</strong>' +
       "<p>Informations pratiques pour les enseignants convoqués aux examens de la Zone Europe du Sud-Est&nbsp;: convocation, déplacements, frais, second groupe.</p></div>" +
       '<div><h2 class="footer-title">Ma mission</h2><ul class="footer-list">' +
-      '<li><a href="' + BASE + 'correction.html">Correction des écrits</a></li>' +
+      '<li><a href="' + BASE + 'correction.html">Correction des écrits du bac</a></li>' +
+      '<li><a href="' + BASE + 'dnb.html">Brevet (DNB)</a></li>' +
       '<li><a href="' + BASE + 'oral-francais.html">Oral de français</a></li>' +
       '<li><a href="' + BASE + 'grand-oral.html">Grand oral</a></li>' +
       '<li><a href="' + BASE + 'second-groupe.html">Second groupe</a></li>' +

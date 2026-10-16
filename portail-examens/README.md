@@ -11,7 +11,8 @@ Site d'information commun à tous les enseignants (pas d'espace personnel).
 |---|---|
 | `index.html` | Accueil : l’essentiel (absence, convocation, état de frais), choix de la mission, « être payé(e) » en 3 étapes |
 | `convocation.html` | Convocation par mail professionnel, caractère obligatoire, procédure d’absence (certificat médical) |
-| `correction.html` | Correcteurs : SANTORIN / VIATIQUE, réunions, état de frais F1 |
+| `correction.html` | Correcteurs du baccalauréat : SANTORIN, réunions, état de frais F1 |
+| `dnb.html` | Brevet : calendrier par pays, correction sur VIATIQUE, état de frais F1 DNB, barème |
 | `oral-francais.html` | Oral de français : Drive des œuvres et textes, déroulement, état de frais F2 |
 | `grand-oral.html` | Grand oral : rôle de l’examinateur non spécialiste, déroulement, état de frais F2 |
 | `second-groupe.html` | Second groupe en visio, sujets en ligne, état de frais F2 |
